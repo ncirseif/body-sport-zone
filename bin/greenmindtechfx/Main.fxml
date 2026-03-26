@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="greenmindtechfx.MainController">
+
+    <!-- Animated sport background (CSS handles the image + animation) -->
+    <Region fx:id="bgRegion" styleClass="gmt-bg" maxWidth="Infinity" maxHeight="Infinity"/>
+
+    <!-- Dark cinematic overlay on top of background -->
+    <Region styleClass="gmt-bg-overlay" maxWidth="Infinity" maxHeight="Infinity" mouseTransparent="true"/>
+
+    <!-- Full-page layout: logo/brand top, form centred -->
+    <VBox alignment="CENTER" spacing="0.0">
+
+        <!-- ── TOP BRAND HEADER (was the left sidebar) ── -->
+        <VBox fx:id="brandPanel" alignment="CENTER" spacing="16.0" styleClass="gmt-brand-header">
+            <padding>
+                <Insets top="32.0" right="40.0" bottom="28.0" left="40.0"/>
+            </padding>
+
+            <!-- Logo -->
+            <HBox fx:id="logoBox" spacing="12.0" alignment="CENTER">
+                <Label fx:id="logoIcon" text="&#x1F525;" styleClass="gmt-logo"/>
+                <Label fx:id="logoText" text="Body Sport Zone" styleClass="gmt-title"/>
+            </HBox>
+
+            <Label fx:id="brandTagline" text="Push harder. Train smarter. No excuses - just results." styleClass="gmt-subtitle" wrapText="true"/>
+
+            <!-- Separator line -->
+            <Region fx:id="brandSeparator" style="-fx-min-height: 1; -fx-max-height: 1; -fx-background-color: rgba(229,57,53,0.20);" maxWidth="500.0"/>
+
+            <!-- Feature pills (was vertical cards, now horizontal) -->
+            <HBox spacing="16.0" alignment="CENTER">
+                <VBox fx:id="card1" spacing="4.0" styleClass="gmt-card gmt-soft-card gmt-pill-card" alignment="CENTER">
+                    <padding><Insets top="10.0" right="16.0" bottom="10.0" left="16.0"/></padding>
+                    <Label text="&#x1F4AA; Strength" styleClass="gmt-label gmt-strong"/>
+                    <Label text="Build raw power" styleClass="gmt-subtitle gmt-tiny" wrapText="true"/>
+                </VBox>
+                <VBox fx:id="card2" spacing="4.0" styleClass="gmt-card gmt-soft-card gmt-pill-card" alignment="CENTER">
+                    <padding><Insets top="10.0" right="16.0" bottom="10.0" left="16.0"/></padding>
+                    <Label text="&#x26A1; HIIT" styleClass="gmt-label gmt-strong"/>
+                    <Label text="Push your limits" styleClass="gmt-subtitle gmt-tiny" wrapText="true"/>
+                </VBox>
+                <VBox fx:id="card3" spacing="4.0" styleClass="gmt-card gmt-soft-card gmt-pill-card" alignment="CENTER">
+                    <padding><Insets top="10.0" right="16.0" bottom="10.0" left="16.0"/></padding>
+                    <Label text="&#x1F525; Calorie Forge" styleClass="gmt-label gmt-strong"/>
+                    <Label text="Track &amp; control" styleClass="gmt-subtitle gmt-tiny" wrapText="true"/>
+                </VBox>
+            </HBox>
+        </VBox>
+
+        <!-- ── CENTRE: form card host ── -->
+        <StackPane fx:id="contentHost" styleClass="gmt-center-host" VBox.vgrow="ALWAYS">
+            <padding>
+                <Insets top="10.0" right="30.0" bottom="20.0" left="30.0"/>
+            </padding>
+        </StackPane>
+
+        <!-- Bottom tagline -->
+        <Label fx:id="forgeTagline" text="-- FORGE YOUR LEGACY --" styleClass="gmt-tag gmt-footer-tag"/>
+    </VBox>
+
+    <!-- Login animation overlay (unchanged) -->
+    <StackPane fx:id="loginAnimOverlay" visible="false" managed="false" mouseTransparent="true" styleClass="gmt-login-overlay">
+        <VBox fx:id="loginAnimCard" spacing="14.0" styleClass="gmt-login-anim-card" maxWidth="420.0" alignment="CENTER">
+            <padding>
+                <Insets top="28.0" right="28.0" bottom="28.0" left="28.0"/>
+            </padding>
+            <Label fx:id="loginAnimTitle" text="&#x1F525; ACCESS GRANTED" styleClass="gmt-form-title"/>
+            <HBox spacing="22.0" alignment="CENTER">
+                <Label fx:id="pushRunner" text="&#x1F3CB;&#xFE0F;" styleClass="gmt-runner"/>
+                <Label fx:id="pushTarget" text="&#x2589;" styleClass="gmt-push-target"/>
+            </HBox>
+            <Label fx:id="loginAnimSub" text="Pushing your limits forward..." styleClass="gmt-subtitle"/>
+        </VBox>
+    </StackPane>
+
+</StackPane>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="greenmindtechfx.SessionController" spacing="14.0" styleClass="gmt-form-card gmt-form" maxWidth="560.0" maxHeight="520.0">
+    <padding>
+        <Insets top="28.0" right="28.0" bottom="28.0" left="28.0"/>
+    </padding>
+
+    <Label text="🏆" style="-fx-font-size: 36px;"/>
+    <Label text="You're In The Arena" styleClass="gmt-form-title"/>
+    <Label text="Your session is active. Time to push some limits." styleClass="gmt-subtitle"/>
+    <Separator/>
+
+    <Label text="LOGGED IN AS" styleClass="gmt-label"/>
+    <Label fx:id="subtitleLabel" styleClass="gmt-subtitle" style="-fx-font-size: 15px; -fx-text-fill: #ffffff;"/>
+
+    <Button text="🔥  LOGOUT" onAction="#onLogout" maxWidth="1.7976931348623157E308" styleClass="gmt-btn-primary gmt-btn-lg"/>
+</VBox>

@@ -1,0 +1,44 @@
+# ─── Eclipse ───────────────────────────────────────────────────
+.metadata/
+.classpath
+.project
+.settings/
+*.launch
+.buildpath
+.target
+
+# ─── Compiled output ───────────────────────────────────────────
+bin/
+build/
+out/
+*.class
+*.jar
+*.war
+
+# ─── Database credentials — NEVER push these ───────────────────
+db.properties
+database.properties
+config.properties
+datasource.properties
+*.env
+.env
+
+# ─── Gmail SMTP credentials ────────────────────────────────────
+# These are read from environment variables (GMAIL_SMTP_USER,
+# GMAIL_SMTP_APP_PASSWORD) — never hardcode them in any file here
+
+# ─── Maven / Gradle ────────────────────────────────────────────
+target/
+.gradle/
+gradle-app.setting
+!gradle-wrapper.jar
+
+# ─── OS files ──────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── IDE misc ──────────────────────────────────────────────────
+*.swp
+*.swo
+*~

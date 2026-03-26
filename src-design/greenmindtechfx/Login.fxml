@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="greenmindtechfx.LoginController" spacing="14.0" styleClass="gmt-form-card gmt-form" maxWidth="560.0" maxHeight="560.0">
+    <padding>
+        <Insets top="28.0" right="28.0" bottom="28.0" left="28.0"/>
+    </padding>
+
+    <Label text="🔥" style="-fx-font-size: 32px;"/>
+    <Label text="Welcome Back, Warrior" styleClass="gmt-form-title"/>
+    <Label text="Enter your credentials to access the arena." styleClass="gmt-subtitle"/>
+    <Separator/>
+
+    <Label text="EMAIL" styleClass="gmt-label"/>
+    <TextField fx:id="emailField" promptText="name@gmail.com" styleClass="gmt-field"/>
+
+    <Label text="PASSWORD" styleClass="gmt-label"/>
+    <PasswordField fx:id="passwordField" promptText="••••••••" styleClass="gmt-field"/>
+
+    <Button text="⚡  LOGIN" onAction="#onLogin" maxWidth="1.7976931348623157E308" styleClass="gmt-btn-primary gmt-btn-lg"/>
+
+    <HBox spacing="14.0" alignment="CENTER_LEFT">
+        <Button text="Create account" onAction="#onGoSignup" styleClass="gmt-btn-link"/>
+        <Label text="•" styleClass="gmt-subtitle"/>
+        <Button text="Forgot password?" onAction="#onGoReset" styleClass="gmt-btn-link"/>
+    </HBox>
+
+    <Label fx:id="statusLabel" wrapText="true" styleClass="gmt-status"/>
+</VBox>
