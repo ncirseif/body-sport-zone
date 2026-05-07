@@ -2,147 +2,70 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
 
 <StackPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
            fx:controller="controller.MainController"
-           prefWidth="980" prefHeight="560">
-    <children>
-        <!-- LAYER 1 — Background image region -->
-        <Region fx:id="bgRegion" styleClass="gmt-bg" maxWidth="Infinity" maxHeight="Infinity"/>
+           prefWidth="1100" prefHeight="700">
 
-        <!-- LAYER 2 — Dark cinematic overlay (mouse transparent) -->
-        <Region styleClass="gmt-bg-overlay" maxWidth="Infinity" maxHeight="Infinity" mouseTransparent="true"/>
+    <!-- LAYER 1 — Background photo (Ken Burns in controller) -->
+    <Region fx:id="bgRegion" styleClass="gmt-bg" maxWidth="Infinity" maxHeight="Infinity"/>
 
-        <!-- LAYER 3 — Full-page VBox -->
-        <VBox alignment="CENTER" spacing="0">
-            <children>
-                <!-- A) BRAND HEADER -->
-                <VBox fx:id="brandPanel" alignment="CENTER" spacing="16" styleClass="gmt-brand-header">
-                    <padding>
-                        <Insets top="32" right="40" bottom="28" left="40"/>
-                    </padding>
-                    <children>
-                        <HBox fx:id="logoBox" spacing="12" alignment="CENTER" onMouseClicked="#openHome" style="-fx-cursor: hand;">
-                            <children>
-                                <Label fx:id="logoIcon" text="🔥" styleClass="gmt-logo"/>
-                                <Label fx:id="logoText" text="FITPRO" styleClass="gmt-title"/>
-                            </children>
-                        </HBox>
-                        <Label fx:id="brandTagline" text="Master your Body, Forge your Strength" styleClass="gmt-subtitle" wrapText="true"/>
-                        <Region fx:id="brandSeparator" style="-fx-min-height:1;-fx-max-height:1; -fx-background-color:rgba(229,57,53,0.20);" maxWidth="500"/>
-                        <HBox spacing="16" alignment="CENTER">
-                            <children>
-                                <VBox fx:id="card1" spacing="4" alignment="CENTER" styleClass="gmt-card, gmt-soft-card, gmt-pill-card" onMouseClicked="#openPrograms" style="-fx-cursor: hand;">
-                                    <padding><Insets top="10" right="16" bottom="10" left="16"/></padding>
-                                    <children>
-                                        <Label text="🏋️ PROGRAMS" styleClass="gmt-label, gmt-strong"/>
-                                        <Label text="Structured plans" styleClass="gmt-subtitle, gmt-tiny" wrapText="true"/>
-                                    </children>
-                                </VBox>
-                                <VBox fx:id="card2" spacing="4" alignment="CENTER" styleClass="gmt-card, gmt-soft-card, gmt-pill-card" onMouseClicked="#openExercises" style="-fx-cursor: hand;">
-                                    <padding><Insets top="10" right="16" bottom="10" left="16"/></padding>
-                                    <children>
-                                        <Label text="🤸 EXERCISES" styleClass="gmt-label, gmt-strong"/>
-                                        <Label text="Muscle library" styleClass="gmt-subtitle, gmt-tiny" wrapText="true"/>
-                                    </children>
-                                </VBox>
-                                <VBox fx:id="card3" spacing="4" alignment="CENTER" styleClass="gmt-card, gmt-soft-card, gmt-pill-card" onMouseClicked="#openSessions" style="-fx-cursor: hand;">
-                                    <padding><Insets top="10" right="16" bottom="10" left="16"/></padding>
-                                    <children>
-                                        <Label text="⏱️ SESSIONS" styleClass="gmt-label, gmt-strong"/>
-                                        <Label text="Track work" styleClass="gmt-subtitle, gmt-tiny" wrapText="true"/>
-                                    </children>
-                                </VBox>
-                                <VBox fx:id="card4" spacing="4" alignment="CENTER" styleClass="gmt-card, gmt-soft-card, gmt-pill-card" onMouseClicked="#openProgress" style="-fx-cursor: hand;">
-                                    <padding><Insets top="10" right="16" bottom="10" left="16"/></padding>
-                                    <children>
-                                        <Label text="📈 PROGRESS" styleClass="gmt-label, gmt-strong"/>
-                                        <Label text="Performance" styleClass="gmt-subtitle, gmt-tiny" wrapText="true"/>
-                                    </children>
-                                </VBox>
-                            </children>
-                        </HBox>
-                        <HBox spacing="16" alignment="CENTER">
-                            <children>
-                                <VBox spacing="4" alignment="CENTER" styleClass="gmt-card, gmt-soft-card, gmt-pill-card" onMouseClicked="#openHealthProfiles" style="-fx-cursor: hand;">
-                                    <padding><Insets top="10" right="16" bottom="10" left="16"/></padding>
-                                    <children>
-                                        <Label text="❤️ HEALTH" styleClass="gmt-label, gmt-strong"/>
-                                        <Label text="Body metrics" styleClass="gmt-subtitle, gmt-tiny" wrapText="true"/>
-                                    </children>
-                                </VBox>
-                                <VBox spacing="4" alignment="CENTER" styleClass="gmt-card, gmt-soft-card, gmt-pill-card" onMouseClicked="#openGoals" style="-fx-cursor: hand;">
-                                    <padding><Insets top="10" right="16" bottom="10" left="16"/></padding>
-                                    <children>
-                                        <Label text="🎯 GOALS" styleClass="gmt-label, gmt-strong"/>
-                                        <Label text="Target tracking" styleClass="gmt-subtitle, gmt-tiny" wrapText="true"/>
-                                    </children>
-                                </VBox>
-                                <VBox spacing="4" alignment="CENTER" styleClass="gmt-card, gmt-soft-card, gmt-pill-card" onMouseClicked="#openInjuries" style="-fx-cursor: hand;">
-                                    <padding><Insets top="10" right="16" bottom="10" left="16"/></padding>
-                                    <children>
-                                        <Label text="🩹 INJURIES" styleClass="gmt-label, gmt-strong"/>
-                                        <Label text="Injury log" styleClass="gmt-subtitle, gmt-tiny" wrapText="true"/>
-                                    </children>
-                                </VBox>
-                                <VBox spacing="4" alignment="CENTER" styleClass="gmt-card, gmt-soft-card, gmt-pill-card" onMouseClicked="#openRehabPlans" style="-fx-cursor: hand;">
-                                    <padding><Insets top="10" right="16" bottom="10" left="16"/></padding>
-                                    <children>
-                                        <Label text="🏥 REHAB" styleClass="gmt-label, gmt-strong"/>
-                                        <Label text="Recovery plans" styleClass="gmt-subtitle, gmt-tiny" wrapText="true"/>
-                                    </children>
-                                </VBox>
-                                <VBox spacing="4" alignment="CENTER" styleClass="gmt-card, gmt-soft-card, gmt-pill-card" onMouseClicked="#openRehabTracking" style="-fx-cursor: hand;">
-                                    <padding><Insets top="10" right="16" bottom="10" left="16"/></padding>
-                                    <children>
-                                        <Label text="📋 TRACKING" styleClass="gmt-label, gmt-strong"/>
-                                        <Label text="Rehab sessions" styleClass="gmt-subtitle, gmt-tiny" wrapText="true"/>
-                                    </children>
-                                </VBox>
-                                <VBox spacing="4" alignment="CENTER" styleClass="gmt-card, gmt-soft-card, gmt-pill-card" onMouseClicked="#openTasks" style="-fx-cursor: hand;">
-                                    <padding><Insets top="10" right="16" bottom="10" left="16"/></padding>
-                                    <children>
-                                        <Label text="✅ TASKS" styleClass="gmt-label, gmt-strong"/>
-                                        <Label text="Dashboard" styleClass="gmt-subtitle, gmt-tiny" wrapText="true"/>
-                                    </children>
-                                </VBox>
-                            </children>
-                        </HBox>
-                    </children>
-                </VBox>
+    <!-- LAYER 2 — Cinematic dark overlay -->
+    <Region styleClass="gmt-bg-overlay" maxWidth="Infinity" maxHeight="Infinity" mouseTransparent="true"/>
 
-                <!-- B) CONTENT HOST -->
-                <StackPane fx:id="contentHost" styleClass="gmt-center-host" VBox.vgrow="ALWAYS">
-                    <padding>
-                        <Insets top="10" right="30" bottom="20" left="30"/>
-                    </padding>
-                </StackPane>
+    <!-- LAYER 3 — Main layout -->
+    <VBox alignment="TOP_CENTER" spacing="0">
 
-                <!-- C) FOOTER -->
-                <Label fx:id="forgeTagline" text="-- PROUDLY FORGED BY FITNESSUI --" styleClass="gmt-tag, gmt-footer-tag"/>
-            </children>
+        <!-- NAVBAR — matches Symfony gmt-navbar -->
+        <HBox fx:id="brandPanel" styleClass="gmt-navbar" alignment="CENTER_LEFT"
+              spacing="0" prefHeight="56" minHeight="56">
+            <padding><Insets left="24" right="24"/></padding>
+
+            <!-- Brand logo (click → home) -->
+            <HBox fx:id="logoBox" spacing="8" alignment="CENTER"
+                  onMouseClicked="#openHome" style="-fx-cursor: hand;">
+                <Label fx:id="logoIcon" text="🔥" styleClass="gmt-nav-logo"/>
+                <Label fx:id="logoText" text="BODY SPORT ZONE" styleClass="gmt-nav-brand"/>
+            </HBox>
+
+            <!-- Flexible spacer -->
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <!-- Nav links -->
+            <HBox spacing="2" alignment="CENTER">
+                <Button text="HOME"          onMouseClicked="#openHome"           styleClass="gmt-nav-link"/>
+                <Button text="🏋️ FITNESS"   onMouseClicked="#openPrograms"       styleClass="gmt-nav-link"/>
+                <Button text="🥗 NUTRITION"  onMouseClicked="#openNutrition"      styleClass="gmt-nav-link"/>
+                <Button text="🏥 HEALTH"     onMouseClicked="#openHealthProfiles" styleClass="gmt-nav-link"/>
+                <Button text="🩹 REHAB"      onMouseClicked="#openInjuries"       styleClass="gmt-nav-link"/>
+                <Button text="🎯 GOALS"      onMouseClicked="#openGoals"          styleClass="gmt-nav-link"/>
+                <Button text="✅ TASKS"      onMouseClicked="#openTasks"          styleClass="gmt-nav-link"/>
+            </HBox>
+
+        </HBox>
+
+        <!-- CONTENT HOST — fills remaining space -->
+        <StackPane fx:id="contentHost" styleClass="gmt-center-host" VBox.vgrow="ALWAYS"/>
+
+        <!-- FOOTER -->
+        <Label fx:id="forgeTagline" text="-- BODY SPORT ZONE — ESPRIT --"
+               styleClass="gmt-tag, gmt-footer-tag"/>
+
+    </VBox>
+
+    <!-- LAYER 4 — Login / success animation overlay (initially hidden) -->
+    <StackPane fx:id="loginAnimOverlay" visible="false" managed="false"
+               mouseTransparent="true" styleClass="gmt-login-overlay">
+        <VBox fx:id="loginAnimCard" spacing="14" maxWidth="420" alignment="CENTER"
+              styleClass="gmt-login-anim-card">
+            <padding><Insets top="28" right="28" bottom="28" left="28"/></padding>
+            <Label fx:id="loginAnimTitle" text="🔥 ACCESS GRANTED" styleClass="gmt-form-title"/>
+            <HBox spacing="22" alignment="CENTER">
+                <Label fx:id="pushRunner" text="🏋️" styleClass="gmt-runner"/>
+                <Label fx:id="pushTarget" text="█" styleClass="gmt-push-target"/>
+            </HBox>
+            <Label fx:id="loginAnimSub" text="READY FOR YOUR NEXT GAINS?" styleClass="gmt-subtitle"/>
         </VBox>
+    </StackPane>
 
-        <!-- LAYER 4 — Login success animation overlay (initially hidden) -->
-        <StackPane fx:id="loginAnimOverlay" visible="false" managed="false" mouseTransparent="true" styleClass="gmt-login-overlay">
-            <children>
-                <VBox fx:id="loginAnimCard" spacing="14" maxWidth="420" alignment="CENTER" styleClass="gmt-login-anim-card">
-                    <padding>
-                        <Insets top="28" right="28" bottom="28" left="28"/>
-                    </padding>
-                    <children>
-                        <Label fx:id="loginAnimTitle" text="🔥 ACCESS GRANTED" styleClass="gmt-form-title"/>
-                        <HBox spacing="22" alignment="CENTER">
-                            <children>
-                                <Label fx:id="pushRunner" text="🏋️" styleClass="gmt-runner"/>
-                                <Label fx:id="pushTarget" text="█" styleClass="gmt-push-target"/>
-                            </children>
-                        </HBox>
-                        <Label fx:id="loginAnimSub" text="READY FOR YOUR NEXT GAINS?" styleClass="gmt-subtitle"/>
-                    </children>
-                </VBox>
-            </children>
-        </StackPane>
-    </children>
 </StackPane>

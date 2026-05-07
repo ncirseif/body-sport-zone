@@ -8,9 +8,9 @@ public class DataSource {
     private static Connection cnx;
     private static DataSource instance;
     
-    private final String URL = "jdbc:mysql://localhost:3306/esprit?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
-    private final String USER = "root";
-    private final String PASSWORD = "";
+    private final String URL = "jdbc:mysql://192.168.1.172:3306/esprit?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
+    private final String USER = "esprit_user";
+    private final String PASSWORD = "esprit2025AA";
     
     private DataSource() {
         try {

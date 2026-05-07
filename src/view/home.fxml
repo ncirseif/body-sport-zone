@@ -3,59 +3,260 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
-      alignment="CENTER" spacing="28" styleClass="gmt-center-host" prefWidth="800">
-    <children>
-        <!-- Welcome Section -->
-        <VBox alignment="CENTER" spacing="8">
-            <children>
-                <Label text="👋 Welcome back, Athlete!" styleClass="gmt-form-title" style="-fx-font-size: 32px;"/>
-                <Label text="Your transformation continues today. Forge your path to excellence." styleClass="gmt-subtitle" style="-fx-font-size: 16px;"/>
-            </children>
+<ScrollPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.HomeController"
+            fitToWidth="true" hbarPolicy="NEVER"
+            style="-fx-background-color: transparent; -fx-background: transparent;"
+            maxWidth="Infinity" maxHeight="Infinity">
+    <content>
+        <VBox alignment="TOP_CENTER" spacing="0" maxWidth="Infinity">
+
+            <!-- ═══════════════════════════════════════
+                 HERO — "FORGE YOUR LEGACY"
+                 ═══════════════════════════════════════ -->
+            <VBox alignment="CENTER" spacing="18" prefHeight="400" styleClass="gmt-hero-section">
+                <padding><Insets top="70" right="80" bottom="56" left="80"/></padding>
+
+                <!-- Eyebrow badge -->
+                <Label text="🔥  Complete Fitness Platform" styleClass="gmt-hero-eyebrow"/>
+
+                <!-- Main headline -->
+                <VBox alignment="CENTER" spacing="0">
+                    <Label text="FORGE YOUR" styleClass="gmt-hero-line1" textAlignment="CENTER"/>
+                    <Label text="LEGACY" styleClass="gmt-hero-line2" textAlignment="CENTER"/>
+                </VBox>
+
+                <Label text="Push harder. Train smarter. No excuses."
+                       styleClass="gmt-hero-sub" textAlignment="CENTER"/>
+
+                <!-- CTA Buttons -->
+                <HBox spacing="16" alignment="CENTER">
+                    <Button text="START NOW →" styleClass="gmt-btn-primary, gmt-btn-lg"
+                            onMouseClicked="#onStartNow"/>
+                    <Button text="EXPLORE MODULES" styleClass="gmt-btn-ghost"
+                            onMouseClicked="#onExploreModules"/>
+                </HBox>
+
+                <!-- Stats bar -->
+                <HBox spacing="48" alignment="CENTER" style="-fx-padding: 20 0 0 0;">
+                    <VBox alignment="CENTER" spacing="2">
+                        <Label fx:id="statUsers" text="..." styleClass="gmt-hero-stat-num"/>
+                        <Label text="WARRIORS" styleClass="gmt-hero-stat-lbl"/>
+                    </VBox>
+                    <Region style="-fx-min-width:1;-fx-max-width:1;-fx-min-height:36;-fx-background-color:rgba(229,57,53,0.18);"/>
+                    <VBox alignment="CENTER" spacing="2">
+                        <Label text="7" styleClass="gmt-hero-stat-num"/>
+                        <Label text="MODULES" styleClass="gmt-hero-stat-lbl"/>
+                    </VBox>
+                    <Region style="-fx-min-width:1;-fx-max-width:1;-fx-min-height:36;-fx-background-color:rgba(229,57,53,0.18);"/>
+                    <VBox alignment="CENTER" spacing="2">
+                        <Label fx:id="statExercises" text="..." styleClass="gmt-hero-stat-num"/>
+                        <Label text="EXERCISES" styleClass="gmt-hero-stat-lbl"/>
+                    </VBox>
+                    <Region style="-fx-min-width:1;-fx-max-width:1;-fx-min-height:36;-fx-background-color:rgba(229,57,53,0.18);"/>
+                    <VBox alignment="CENTER" spacing="2">
+                        <Label text="AI" style="-fx-text-fill:#E53935;-fx-font-size:28px;-fx-font-weight:900;"/>
+                        <Label text="CHATBOT" styleClass="gmt-hero-stat-lbl"/>
+                    </VBox>
+                </HBox>
+            </VBox>
+
+            <!-- ═══════════════════════════════════════
+                 FEATURES — 7 Module Sections
+                 ═══════════════════════════════════════ -->
+
+            <!-- 01 — FITNESS -->
+            <HBox styleClass="gmt-feature-row" spacing="36" alignment="CENTER_LEFT">
+                <padding><Insets top="36" right="80" bottom="36" left="80"/></padding>
+                <VBox alignment="CENTER" spacing="4" minWidth="90" maxWidth="90">
+                    <Label text="01 / 07" styleClass="gmt-feat-num"/>
+                    <Label text="🏋️" style="-fx-font-size:52px;"/>
+                </VBox>
+                <VBox HBox.hgrow="ALWAYS" spacing="8">
+                    <Label text="FITNESS" styleClass="gmt-feat-title"/>
+                    <Label text="Build the body you want with structured programs, exercises, and real progress metrics."
+                           styleClass="gmt-feat-desc" wrapText="true"/>
+                    <VBox spacing="3">
+                        <Label text="• Training programs &amp; exercises" styleClass="gmt-feat-bullet"/>
+                        <Label text="• Session scheduling &amp; logging" styleClass="gmt-feat-bullet"/>
+                        <Label text="• Progress tracking over time" styleClass="gmt-feat-bullet"/>
+                    </VBox>
+                </VBox>
+                <Button text="FITNESS →" onMouseClicked="#onOpenFitness" styleClass="gmt-feat-btn"/>
+            </HBox>
+
+            <!-- 02 — NUTRITION -->
+            <HBox styleClass="gmt-feature-row, gmt-feature-alt" spacing="36" alignment="CENTER_LEFT">
+                <padding><Insets top="36" right="80" bottom="36" left="80"/></padding>
+                <VBox alignment="CENTER" spacing="4" minWidth="90" maxWidth="90">
+                    <Label text="02 / 07" styleClass="gmt-feat-num"/>
+                    <Label text="🥗" style="-fx-font-size:52px;"/>
+                </VBox>
+                <VBox HBox.hgrow="ALWAYS" spacing="8">
+                    <Label text="NUTRITION" styleClass="gmt-feat-title"/>
+                    <Label text="Fuel your performance with meal planning, macro tracking, and adherence monitoring."
+                           styleClass="gmt-feat-desc" wrapText="true"/>
+                    <VBox spacing="3">
+                        <Label text="• Custom nutrition plans" styleClass="gmt-feat-bullet"/>
+                        <Label text="• Food items &amp; meal logging" styleClass="gmt-feat-bullet"/>
+                        <Label text="• Adherence history &amp; streaks" styleClass="gmt-feat-bullet"/>
+                    </VBox>
+                </VBox>
+                <Button text="NUTRITION →" onMouseClicked="#onOpenNutrition" styleClass="gmt-feat-btn"/>
+            </HBox>
+
+            <!-- 03 — INJURY &amp; REHAB -->
+            <HBox styleClass="gmt-feature-row" spacing="36" alignment="CENTER_LEFT">
+                <padding><Insets top="36" right="80" bottom="36" left="80"/></padding>
+                <VBox alignment="CENTER" spacing="4" minWidth="90" maxWidth="90">
+                    <Label text="03 / 07" styleClass="gmt-feat-num"/>
+                    <Label text="🩹" style="-fx-font-size:52px;"/>
+                </VBox>
+                <VBox HBox.hgrow="ALWAYS" spacing="8">
+                    <Label text="INJURY &amp; REHAB" styleClass="gmt-feat-title"/>
+                    <Label text="Track injuries, build personalised rehab plans, and monitor your recovery from setback to comeback."
+                           styleClass="gmt-feat-desc" wrapText="true"/>
+                    <VBox spacing="3">
+                        <Label text="• Injury logging with severity" styleClass="gmt-feat-bullet"/>
+                        <Label text="• Rehab plan builder" styleClass="gmt-feat-bullet"/>
+                        <Label text="• Recovery session tracking" styleClass="gmt-feat-bullet"/>
+                    </VBox>
+                </VBox>
+                <Button text="REHAB →" onMouseClicked="#onOpenRehab" styleClass="gmt-feat-btn"/>
+            </HBox>
+
+            <!-- 04 — HEALTH -->
+            <HBox styleClass="gmt-feature-row, gmt-feature-alt" spacing="36" alignment="CENTER_LEFT">
+                <padding><Insets top="36" right="80" bottom="36" left="80"/></padding>
+                <VBox alignment="CENTER" spacing="4" minWidth="90" maxWidth="90">
+                    <Label text="04 / 07" styleClass="gmt-feat-num"/>
+                    <Label text="🏥" style="-fx-font-size:52px;"/>
+                </VBox>
+                <VBox HBox.hgrow="ALWAYS" spacing="8">
+                    <Label text="HEALTH" styleClass="gmt-feat-title"/>
+                    <Label text="Complete health dashboard — manage allergies, calculate BMI, and track your wellness profile."
+                           styleClass="gmt-feat-desc" wrapText="true"/>
+                    <VBox spacing="3">
+                        <Label text="• Allergy management &amp; alerts" styleClass="gmt-feat-bullet"/>
+                        <Label text="• Health profile &amp; BMI calculator" styleClass="gmt-feat-bullet"/>
+                        <Label text="• Dashboard overview" styleClass="gmt-feat-bullet"/>
+                    </VBox>
+                </VBox>
+                <Button text="HEALTH →" onMouseClicked="#onOpenHealth" styleClass="gmt-feat-btn"/>
+            </HBox>
+
+            <!-- 05 — GOALS -->
+            <HBox styleClass="gmt-feature-row" spacing="36" alignment="CENTER_LEFT">
+                <padding><Insets top="36" right="80" bottom="36" left="80"/></padding>
+                <VBox alignment="CENTER" spacing="4" minWidth="90" maxWidth="90">
+                    <Label text="05 / 07" styleClass="gmt-feat-num"/>
+                    <Label text="🎯" style="-fx-font-size:52px;"/>
+                </VBox>
+                <VBox HBox.hgrow="ALWAYS" spacing="8">
+                    <Label text="GOALS" styleClass="gmt-feat-title"/>
+                    <Label text="Set targets, track progress with visual indicators, and stay motivated with milestones."
+                           styleClass="gmt-feat-desc" wrapText="true"/>
+                    <VBox spacing="3">
+                        <Label text="• Goal setting with deadlines" styleClass="gmt-feat-bullet"/>
+                        <Label text="• Visual progress bars" styleClass="gmt-feat-bullet"/>
+                        <Label text="• Achievement milestones" styleClass="gmt-feat-bullet"/>
+                    </VBox>
+                </VBox>
+                <Button text="GOALS →" onMouseClicked="#onOpenGoals" styleClass="gmt-feat-btn"/>
+            </HBox>
+
+            <!-- 06 — TASKS -->
+            <HBox styleClass="gmt-feature-row, gmt-feature-alt" spacing="36" alignment="CENTER_LEFT">
+                <padding><Insets top="36" right="80" bottom="36" left="80"/></padding>
+                <VBox alignment="CENTER" spacing="4" minWidth="90" maxWidth="90">
+                    <Label text="06 / 07" styleClass="gmt-feat-num"/>
+                    <Label text="✅" style="-fx-font-size:52px;"/>
+                </VBox>
+                <VBox HBox.hgrow="ALWAYS" spacing="8">
+                    <Label text="TASKS" styleClass="gmt-feat-title"/>
+                    <Label text="Organise your daily fitness tasks with a simple dashboard to keep you on track."
+                           styleClass="gmt-feat-desc" wrapText="true"/>
+                    <VBox spacing="3">
+                        <Label text="• Task creation &amp; management" styleClass="gmt-feat-bullet"/>
+                        <Label text="• Status tracking (ongoing/done)" styleClass="gmt-feat-bullet"/>
+                        <Label text="• Simple productivity dashboard" styleClass="gmt-feat-bullet"/>
+                    </VBox>
+                </VBox>
+                <Button text="TASKS →" onMouseClicked="#onOpenTasks" styleClass="gmt-feat-btn"/>
+            </HBox>
+
+            <!-- 07 — AI ASSISTANT placeholder -->
+            <HBox styleClass="gmt-feature-row" spacing="36" alignment="CENTER_LEFT"
+                  style="-fx-background-color: linear-gradient(to right, rgba(229,57,53,0.07), transparent);">
+                <padding><Insets top="36" right="80" bottom="36" left="80"/></padding>
+                <VBox alignment="CENTER" spacing="4" minWidth="90" maxWidth="90">
+                    <Label text="07 / 07" styleClass="gmt-feat-num"/>
+                    <Label text="🤖" style="-fx-font-size:52px;"/>
+                </VBox>
+                <VBox HBox.hgrow="ALWAYS" spacing="8">
+                    <Label text="AI ASSISTANT" styleClass="gmt-feat-title"/>
+                    <Label text="Your GPT-powered fitness coach. Ask anything about workouts, nutrition, injuries, or health."
+                           styleClass="gmt-feat-desc" wrapText="true"/>
+                    <VBox spacing="3">
+                        <Label text="• AI-powered workout recommendations" styleClass="gmt-feat-bullet"/>
+                        <Label text="• Nutrition &amp; meal suggestions" styleClass="gmt-feat-bullet"/>
+                        <Label text="• Rehab guidance &amp; injury advice" styleClass="gmt-feat-bullet"/>
+                    </VBox>
+                </VBox>
+                <Button text="COMING SOON" styleClass="gmt-feat-btn" disable="true"
+                        style="-fx-opacity:0.5;"/>
+            </HBox>
+
+            <!-- ═══════════════════════════════════════
+                 THE NUMBERS
+                 ═══════════════════════════════════════ -->
+            <VBox styleClass="gmt-stats-section" alignment="CENTER" spacing="24">
+                <padding><Insets top="64" right="60" bottom="64" left="60"/></padding>
+
+                <Label text="THE NUMBERS" styleClass="gmt-stats-title"/>
+
+                <HBox spacing="0" alignment="CENTER" maxWidth="900">
+                    <VBox styleClass="gmt-stat-card" alignment="CENTER" spacing="4" HBox.hgrow="ALWAYS">
+                        <Label fx:id="statUsersCount" text="..." styleClass="gmt-stat-big"/>
+                        <Label text="WARRIORS JOINED" styleClass="gmt-stat-lbl"/>
+                    </VBox>
+                    <VBox styleClass="gmt-stat-card" alignment="CENTER" spacing="4" HBox.hgrow="ALWAYS">
+                        <Label fx:id="statExCount" text="..." styleClass="gmt-stat-big"/>
+                        <Label text="EXERCISES" styleClass="gmt-stat-lbl"/>
+                    </VBox>
+                    <VBox styleClass="gmt-stat-card" alignment="CENTER" spacing="4" HBox.hgrow="ALWAYS">
+                        <Label text="7" styleClass="gmt-stat-big"/>
+                        <Label text="MODULES" styleClass="gmt-stat-lbl"/>
+                    </VBox>
+                    <VBox styleClass="gmt-stat-card" alignment="CENTER" spacing="4" HBox.hgrow="ALWAYS">
+                        <Label text="AI" style="-fx-text-fill:#E53935;-fx-font-size:48px;-fx-font-weight:900;"/>
+                        <Label text="CHATBOT POWERED" styleClass="gmt-stat-lbl"/>
+                    </VBox>
+                </HBox>
+            </VBox>
+
+            <!-- ═══════════════════════════════════════
+                 FOOTER
+                 ═══════════════════════════════════════ -->
+            <VBox styleClass="gmt-footer-section" alignment="CENTER" spacing="10">
+                <padding><Insets top="32" right="60" bottom="32" left="60"/></padding>
+                <Label text="BODY SPORT ZONE" style="-fx-text-fill:#E53935;-fx-font-size:22px;-fx-font-weight:900;"/>
+                <Label text='"Forge your legacy, one rep at a time."'
+                       style="-fx-text-fill:rgba(255,255,255,0.35);-fx-font-size:13px;-fx-font-style:italic;"/>
+                <HBox spacing="32" alignment="CENTER" style="-fx-padding: 8 0 0 0;">
+                    <Label text="🏋️ Fitness" styleClass="gmt-feat-bullet"/>
+                    <Label text="🥗 Nutrition" styleClass="gmt-feat-bullet"/>
+                    <Label text="🏥 Health" styleClass="gmt-feat-bullet"/>
+                    <Label text="🩹 Rehab" styleClass="gmt-feat-bullet"/>
+                    <Label text="🎯 Goals" styleClass="gmt-feat-bullet"/>
+                    <Label text="✅ Tasks" styleClass="gmt-feat-bullet"/>
+                </HBox>
+                <Label text="© 2026 Body Sport Zone — PIDEV Project — ESPRIT"
+                       style="-fx-text-fill:rgba(255,255,255,0.20);-fx-font-size:11px;"/>
+                <Label text="Built with 💪 by Team BSZ: Seif · Bilel · Emna · Achraf BA · Achraf BS · Mohamed Fedi"
+                       style="-fx-text-fill:rgba(255,255,255,0.20);-fx-font-size:11px;"/>
+            </VBox>
+
         </VBox>
-
-        <!-- Feature Grid -->
-        <HBox alignment="CENTER" spacing="20">
-            <children>
-                <VBox spacing="12" alignment="CENTER" styleClass="gmt-card, gmt-soft-card" prefWidth="200" prefHeight="180">
-                    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
-                    <children>
-                        <Label text="🏋️" style="-fx-font-size: 40px;"/>
-                        <Label text="PROGRAMS" styleClass="gmt-label, gmt-strong" style="-fx-font-size: 16px;"/>
-                        <Label text="Structured training plans for your goals" styleClass="gmt-subtitle, gmt-tiny" wrapText="true" alignment="CENTER" textAlignment="CENTER"/>
-                    </children>
-                </VBox>
-                <VBox spacing="12" alignment="CENTER" styleClass="gmt-card, gmt-soft-card" prefWidth="200" prefHeight="180">
-                    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
-                    <children>
-                        <Label text="🤸" style="-fx-font-size: 40px;"/>
-                        <Label text="EXERCISES" styleClass="gmt-label, gmt-strong" style="-fx-font-size: 16px;"/>
-                        <Label text="Complete movement &amp; muscle library" styleClass="gmt-subtitle, gmt-tiny" wrapText="true" alignment="CENTER" textAlignment="CENTER"/>
-                    </children>
-                </VBox>
-                <VBox spacing="12" alignment="CENTER" styleClass="gmt-card, gmt-soft-card" prefWidth="200" prefHeight="180">
-                    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
-                    <children>
-                        <Label text="⏱️" style="-fx-font-size: 40px;"/>
-                        <Label text="SESSIONS" styleClass="gmt-label, gmt-strong" style="-fx-font-size: 16px;"/>
-                        <Label text="Log and track your daily workouts" styleClass="gmt-subtitle, gmt-tiny" wrapText="true" alignment="CENTER" textAlignment="CENTER"/>
-                    </children>
-                </VBox>
-                <VBox spacing="12" alignment="CENTER" styleClass="gmt-card, gmt-soft-card" prefWidth="200" prefHeight="180">
-                    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
-                    <children>
-                        <Label text="📈" style="-fx-font-size: 40px;"/>
-                        <Label text="PROGRESS" styleClass="gmt-label, gmt-strong" style="-fx-font-size: 16px;"/>
-                        <Label text="Visualise your performance gains" styleClass="gmt-subtitle, gmt-tiny" wrapText="true" alignment="CENTER" textAlignment="CENTER"/>
-                    </children>
-                </VBox>
-            </children>
-        </HBox>
-
-        <!-- Quick Action -->
-        <Button text="🔥 START TRAINING NOW" styleClass="gmt-btn-primary, gmt-btn-lg" prefWidth="300"/>
-    </children>
-    <padding>
-        <Insets top="40" right="40" bottom="40" left="40"/>
-    </padding>
-</VBox>
+    </content>
+</ScrollPane>

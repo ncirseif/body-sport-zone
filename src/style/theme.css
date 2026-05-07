@@ -1,236 +1,447 @@
 /* =========================================
-   DARK FORGE DESIGN SYSTEM - theme.css
+   BODY SPORT ZONE — DARK FORGE THEME
+   Mirrors the Symfony edition styles
    ========================================= */
 
-.root { 
-    -fx-font-family: "Segoe UI"; 
-    -fx-base: #0a0a0a; 
-    -fx-background: #0a0a0a; 
-    -fx-background-color: #0a0a0a; 
-} 
+.root {
+    -fx-font-family: "Segoe UI";
+    -fx-base: #0a0a0a;
+    -fx-background: #0a0a0a;
+    -fx-background-color: #0a0a0a;
+}
 
-/* Background photo — Gym photo from Unsplash */ 
-.gmt-bg { 
-    -fx-background-image: url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=85"); 
-    -fx-background-size: cover; 
-    -fx-background-position: center center; 
-    -fx-background-repeat: no-repeat; 
-} 
+/* ── BACKGROUND ── */
+.gmt-bg {
+    -fx-background-image: url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=85");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+}
 
-/* Cinematic dark gradient over the photo */ 
-.gmt-bg-overlay { 
-    -fx-background-color: 
-        linear-gradient(to bottom, 
-            rgba(6,6,6,0.72) 0%, rgba(6,6,6,0.55) 35%, 
-            rgba(6,6,6,0.65) 70%, rgba(6,6,6,0.85) 100%), 
-        radial-gradient(center 50% 40%, radius 65%, 
-            rgba(229,57,53,0.06) 0%, rgba(229,57,53,0.0) 60%); 
-} 
+.gmt-bg-overlay {
+    -fx-background-color:
+        linear-gradient(to bottom,
+            rgba(6,6,6,0.85) 0%, rgba(6,6,6,0.55) 35%,
+            rgba(6,6,6,0.65) 70%, rgba(6,6,6,0.92) 100%),
+        radial-gradient(center 50% 40%, radius 65%,
+            rgba(229,57,53,0.06) 0%, rgba(229,57,53,0.0) 60%);
+}
 
-/* Brand header strip at top */ 
-.gmt-brand-header { 
-    -fx-background-color: 
-        linear-gradient(to bottom, rgba(8,8,8,0.82), rgba(8,8,8,0.55)); 
-    -fx-border-color: transparent transparent rgba(229,57,53,0.18) transparent; 
-    -fx-border-width: 0 0 1 0; 
-} 
+/* ── NAVBAR ── */
+.gmt-navbar {
+    -fx-background-color: linear-gradient(to bottom, rgba(8,8,8,0.90), rgba(8,8,8,0.65));
+    -fx-border-color: transparent transparent rgba(229,57,53,0.18) transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0.2, 0, 2);
+}
 
-/* Horizontal feature pill cards */ 
-.gmt-pill-card { 
-    -fx-min-width: 120; 
-    -fx-max-width: 160; 
-} 
+.gmt-nav-logo {
+    -fx-font-size: 22px;
+}
 
-/* Footer tagline */ 
-.gmt-footer-tag { 
-    -fx-padding: 10 0 12 0; 
-    -fx-alignment: center; 
-} 
+.gmt-nav-brand {
+    -fx-text-fill: #E53935;
+    -fx-font-size: 16px;
+    -fx-font-weight: 700;
+    -fx-effect: dropshadow(gaussian, rgba(229,57,53,0.25), 8, 0.3, 0, 0);
+}
 
-.gmt-tiny { -fx-font-size: 11px; } 
+.gmt-nav-link {
+    -fx-background-color: transparent;
+    -fx-text-fill: rgba(255,255,255,0.60);
+    -fx-font-weight: 600;
+    -fx-font-size: 12px;
+    -fx-padding: 8 12 8 12;
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+}
+.gmt-nav-link:hover {
+    -fx-text-fill: #ffffff;
+    -fx-background-color: rgba(255,255,255,0.06);
+    -fx-background-radius: 4;
+}
 
-/* Feature cards */ 
-.gmt-card { 
-    -fx-background-color: linear-gradient(to bottom right, 
-        rgba(18,18,18,0.97), rgba(12,12,12,0.96)); 
-    -fx-background-radius: 6; 
-    -fx-border-radius: 6; 
-    -fx-border-color: rgba(255,255,255,0.06); 
-    -fx-border-width: 1; 
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 30, 0.25, 0, 10); 
-} 
+/* ── HERO SECTION ── */
+.gmt-hero-section {
+    -fx-background-color: transparent;
+}
 
-.gmt-soft-card { 
-    -fx-background-color: linear-gradient(to right, 
-        rgba(229,57,53,0.06), rgba(20,20,20,0.85)); 
-    -fx-background-radius: 6; 
-    -fx-border-radius: 6; 
-    -fx-border-color: rgba(229,57,53,0.12); 
-    -fx-border-width: 1; 
-} 
+.gmt-hero-eyebrow {
+    -fx-text-fill: #E53935;
+    -fx-font-size: 11px;
+    -fx-font-weight: 800;
+    -fx-padding: 5 14 5 14;
+    -fx-background-color: rgba(229,57,53,0.10);
+    -fx-background-radius: 20;
+    -fx-border-color: rgba(229,57,53,0.22);
+    -fx-border-radius: 20;
+    -fx-border-width: 1;
+}
 
-/* Content host — transparent so photo shows through */ 
-.gmt-center-host { -fx-background-color: transparent; } 
+.gmt-hero-line1 {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 72px;
+    -fx-font-weight: 900;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.9), 20, 0.6, 0, 4),
+                dropshadow(gaussian, rgba(0,0,0,0.8), 40, 0.4, 0, 0);
+}
 
-/* Logo icon (emoji) */ 
-.gmt-logo { 
-    -fx-text-fill: #E53935; 
-    -fx-font-size: 28px; 
-    -fx-font-weight: 700; 
-} 
+.gmt-hero-line2 {
+    -fx-text-fill: #E53935;
+    -fx-font-size: 72px;
+    -fx-font-weight: 900;
+    -fx-effect: dropshadow(gaussian, rgba(229,57,53,0.55), 35, 0.2, 0, 0),
+                dropshadow(gaussian, rgba(0,0,0,0.9), 20, 0.6, 0, 4);
+}
 
-/* App name */ 
-.gmt-title { 
-    -fx-text-fill: #ffffff; 
-    -fx-font-size: 30px; 
-    -fx-font-weight: 700; 
-    -fx-effect: dropshadow(gaussian, rgba(229,57,53,0.2), 8, 0.3, 0, 0); 
-} 
+.gmt-hero-sub {
+    -fx-text-fill: rgba(255,255,255,0.55);
+    -fx-font-size: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.80), 5, 0.4, 0, 1);
+}
 
-/* Form card titles */ 
-.gmt-form-title { 
-    -fx-text-fill: #ffffff; 
-    -fx-font-size: 26px; 
-    -fx-font-weight: 700; 
-    -fx-padding: 0 0 2 0; 
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.95), 10, 0.6, 0, 2), 
-                dropshadow(gaussian, rgba(229,57,53,0.25), 8, 0.3, 0, 0); 
-} 
+.gmt-hero-stat-num {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 28px;
+    -fx-font-weight: 900;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.8), 8, 0.4, 0, 1);
+}
 
-/* Subtitles and descriptions */ 
-.gmt-subtitle { 
-    -fx-text-fill: rgba(255,255,255,0.80); 
-    -fx-font-size: 13px; 
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.80), 5, 0.4, 0, 1); 
-} 
+.gmt-hero-stat-lbl {
+    -fx-text-fill: rgba(255,255,255,0.30);
+    -fx-font-size: 9px;
+    -fx-font-weight: 700;
+}
 
-.gmt-strong { -fx-font-weight: 700; } 
+/* Ghost (outline) button */
+.gmt-btn-ghost {
+    -fx-background-color: transparent;
+    -fx-text-fill: rgba(255,255,255,0.80);
+    -fx-font-weight: 700;
+    -fx-font-size: 13px;
+    -fx-padding: 11 22 11 22;
+    -fx-border-color: rgba(255,255,255,0.22);
+    -fx-border-radius: 4;
+    -fx-border-width: 1.5;
+    -fx-cursor: hand;
+}
+.gmt-btn-ghost:hover {
+    -fx-border-color: rgba(255,255,255,0.50);
+    -fx-background-color: rgba(255,255,255,0.06);
+    -fx-text-fill: #ffffff;
+}
 
-/* Field labels (EMAIL, PASSWORD, etc.) */ 
-.gmt-label { 
-    -fx-text-fill: rgba(255,255,255,0.95); 
-    -fx-font-size: 12px; 
-    -fx-font-weight: 800; 
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.85), 6, 0.5, 0, 1); 
-} 
+/* ── FEATURE ROW CARDS ── */
+.gmt-feature-row {
+    -fx-background-color: rgba(10,10,14,0.90);
+    -fx-border-color: transparent transparent rgba(255,255,255,0.05) transparent;
+    -fx-border-width: 0 0 1 0;
+}
+.gmt-feature-alt {
+    -fx-background-color: rgba(229,57,53,0.015);
+}
 
-/* Separator line inside forms */ 
-.gmt-form .separator .line { 
-    -fx-border-color: rgba(229,57,53,0.25); 
-    -fx-border-width: 1 0 0 0; 
-} 
+.gmt-feat-num {
+    -fx-text-fill: rgba(229,57,53,0.55);
+    -fx-font-size: 10px;
+    -fx-font-weight: 800;
+}
 
-/* Form card background (loaded into contentHost) */ 
-.gmt-form-card { 
-    -fx-background-color: linear-gradient(to bottom right, 
-        rgba(14,14,14,0.97), rgba(10,10,10,0.96)); 
-    -fx-background-radius: 8; 
-    -fx-border-radius: 8; 
-    -fx-border-color: rgba(229,57,53,0.15) rgba(255,255,255,0.06) 
-                       rgba(255,255,255,0.04) rgba(255,255,255,0.06); 
-    -fx-border-width: 1.5 1 1 1; 
-    -fx-effect: dropshadow(gaussian, rgba(229,57,53,0.12), 40, 0.2, 0, 8), 
-                dropshadow(gaussian, rgba(0,0,0,0.75), 30, 0.3, 0, 12); 
-} 
+.gmt-feat-title {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 32px;
+    -fx-font-weight: 900;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.9), 10, 0.5, 0, 2);
+}
 
-/* Input fields */ 
-.gmt-field { 
-    -fx-background-color: rgba(0,0,0,0.55); 
-    -fx-text-fill: #ffffff; 
-    -fx-prompt-text-fill: rgba(255,255,255,0.50); 
-    -fx-background-radius: 4; 
-    -fx-border-radius: 4; 
-    -fx-border-color: rgba(255,255,255,0.20); 
-    -fx-border-width: 1; 
-    -fx-padding: 12 14 12 14; 
-    -fx-font-size: 13px; 
-} 
+.gmt-feat-desc {
+    -fx-text-fill: rgba(255,255,255,0.50);
+    -fx-font-size: 13px;
+    -fx-line-spacing: 3;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.7), 5, 0.3, 0, 1);
+}
 
-.gmt-field:focused { 
-    -fx-border-color: rgba(229,57,53,0.55); 
-    -fx-background-color: rgba(229,57,53,0.04); 
-    -fx-effect: dropshadow(gaussian, rgba(229,57,53,0.15), 12, 0.3, 0, 0); 
-} 
+.gmt-feat-bullet {
+    -fx-text-fill: rgba(255,255,255,0.72);
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+}
 
-/* Primary action button */ 
-.gmt-btn-primary { 
-    -fx-background-color: linear-gradient(to right, #E53935, #FF5252); 
-    -fx-text-fill: #ffffff; 
-    -fx-font-weight: 700; 
-    -fx-font-size: 13px; 
-    -fx-background-radius: 4; 
-    -fx-padding: 11 18 11 18; 
-    -fx-cursor: hand; 
-    -fx-effect: dropshadow(gaussian, rgba(229,57,53,0.35), 12, 0.3, 0, 3); 
-} 
-.gmt-btn-primary:hover { 
-    -fx-background-color: linear-gradient(to right, #EF5350, #FF6E6E); 
-    -fx-effect: dropshadow(gaussian, rgba(229,57,53,0.50), 18, 0.35, 0, 3); 
-} 
-.gmt-btn-primary:pressed { 
-    -fx-background-color: linear-gradient(to right, #C62828, #E53935); 
-    -fx-effect: dropshadow(gaussian, rgba(229,57,53,0.20), 6, 0.2, 0, 1); 
-} 
-.gmt-btn-lg { -fx-font-size: 14px; -fx-padding: 13 18 13 18; } 
+.gmt-feat-btn {
+    -fx-background-color: rgba(229,57,53,0.09);
+    -fx-border-color: rgba(229,57,53,0.28);
+    -fx-border-radius: 4;
+    -fx-border-width: 1.5;
+    -fx-text-fill: rgba(255,255,255,0.82);
+    -fx-font-weight: 800;
+    -fx-font-size: 12px;
+    -fx-padding: 10 18 10 18;
+    -fx-cursor: hand;
+}
+.gmt-feat-btn:hover {
+    -fx-background-color: rgba(229,57,53,0.20);
+    -fx-border-color: rgba(229,57,53,0.55);
+    -fx-text-fill: #ffffff;
+}
 
-/* Secondary text links */ 
-.gmt-btn-link { 
-    -fx-background-color: transparent; 
-    -fx-text-fill: rgba(229,57,53,0.85); 
-    -fx-underline: true; 
-    -fx-cursor: hand; 
-    -fx-font-size: 12px; 
-} 
-.gmt-btn-link:hover { -fx-text-fill: #FF5252; } 
+/* ── STATS SECTION ── */
+.gmt-stats-section {
+    -fx-background-color: linear-gradient(to bottom right, rgba(8,8,8,0.95), rgba(229,57,53,0.025));
+    -fx-border-color: rgba(229,57,53,0.10) transparent rgba(229,57,53,0.10) transparent;
+    -fx-border-width: 1 0 1 0;
+}
 
-/* Status/feedback messages */ 
-.gmt-status { 
-    -fx-padding: 8 12 8 12; 
-    -fx-font-size: 12px; 
-    -fx-background-color: rgba(255,255,255,0.02); 
-    -fx-background-radius: 4; 
-    -fx-border-color: rgba(255,255,255,0.04); 
-    -fx-border-radius: 4; 
-} 
-.gmt-error   { -fx-text-fill: #ff6b6b; -fx-font-size: 12px; } 
-.gmt-success { -fx-text-fill: #69f0ae; -fx-font-size: 12px; } 
+.gmt-stats-title {
+    -fx-text-fill: rgba(255,255,255,0.85);
+    -fx-font-size: 36px;
+    -fx-font-weight: 900;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.9), 10, 0.5, 0, 2);
+}
 
-/* Login success animation overlay */ 
-.gmt-login-overlay { -fx-background-color: rgba(6,6,6,0.85); } 
+.gmt-stat-card {
+    -fx-background-color: transparent;
+}
 
-.gmt-login-anim-card { 
-    -fx-alignment: center; 
-    -fx-background-color: linear-gradient(to bottom right, 
-        rgba(18,18,18,0.98), rgba(10,10,10,0.97)); 
-    -fx-background-radius: 8; 
-    -fx-border-color: rgba(229,57,53,0.35); 
-    -fx-border-radius: 8; 
-    -fx-border-width: 1.5; 
-    -fx-effect: dropshadow(gaussian, rgba(229,57,53,0.20), 30, 0.3, 0, 0); 
-} 
+.gmt-stat-big {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 48px;
+    -fx-font-weight: 900;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.8), 8, 0.4, 0, 2);
+}
 
-.gmt-runner      { -fx-font-size: 56px; } 
-.gmt-push-target { 
-    -fx-font-size: 64px; 
-    -fx-text-fill: #E53935; 
-    -fx-effect: dropshadow(gaussian, rgba(229,57,53,0.35), 14, 0.3, 0, 0); 
-} 
+.gmt-stat-lbl {
+    -fx-text-fill: rgba(255,255,255,0.30);
+    -fx-font-size: 9px;
+    -fx-font-weight: 700;
+}
 
-/* Scrollbars */ 
-.scroll-bar { -fx-background-color: transparent; } 
-.scroll-bar .thumb { 
-    -fx-background-color: rgba(229,57,53,0.3); 
-    -fx-background-radius: 3; 
-} 
-.scroll-bar .thumb:hover { -fx-background-color: rgba(229,57,53,0.5); } 
-.scroll-bar .increment-button, 
-.scroll-bar .decrement-button { -fx-background-color: transparent; -fx-padding: 0; } 
-.scroll-bar .increment-arrow, 
-.scroll-bar .decrement-arrow  { -fx-shape: ""; -fx-padding: 0; } 
-.scroll-bar .track             { -fx-background-color: transparent; } 
+/* ── FOOTER ── */
+.gmt-footer-section {
+    -fx-background-color: rgba(5,5,5,0.99);
+    -fx-border-color: rgba(229,57,53,0.10) transparent transparent transparent;
+    -fx-border-width: 1 0 0 0;
+}
 
-/* Utility */ 
-.gmt-tag        { -fx-text-fill: #E53935; -fx-font-size: 11px; -fx-font-weight: 700; } 
-.gmt-accent-text { -fx-text-fill: #E53935; } 
-.gmt-stat-value  { -fx-text-fill: #ffffff; -fx-font-size: 26px; -fx-font-weight: 700; } 
-.gmt-stat-label  { -fx-text-fill: rgba(255,255,255,0.35); -fx-font-size: 10px; -fx-font-weight: 600; } 
+/* ── BRAND HEADER (legacy / kept for nutrition module) ── */
+.gmt-brand-header {
+    -fx-background-color:
+        linear-gradient(to bottom, rgba(8,8,8,0.82), rgba(8,8,8,0.55));
+    -fx-border-color: transparent transparent rgba(229,57,53,0.18) transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.gmt-pill-card {
+    -fx-min-width: 120;
+    -fx-max-width: 160;
+}
+
+.gmt-footer-tag {
+    -fx-padding: 10 0 12 0;
+    -fx-alignment: center;
+}
+
+.gmt-tiny { -fx-font-size: 11px; }
+
+/* ── CARDS ── */
+.gmt-card {
+    -fx-background-color: linear-gradient(to bottom right,
+        rgba(18,18,18,0.97), rgba(12,12,12,0.96));
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-border-color: rgba(255,255,255,0.06);
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 30, 0.25, 0, 10);
+}
+
+.gmt-soft-card {
+    -fx-background-color: linear-gradient(to right,
+        rgba(229,57,53,0.06), rgba(20,20,20,0.85));
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-border-color: rgba(229,57,53,0.12);
+    -fx-border-width: 1;
+}
+
+/* Content host — transparent so background shows through */
+.gmt-center-host { -fx-background-color: transparent; }
+
+/* Logo icon */
+.gmt-logo {
+    -fx-text-fill: #E53935;
+    -fx-font-size: 28px;
+    -fx-font-weight: 700;
+}
+
+/* App name */
+.gmt-title {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 30px;
+    -fx-font-weight: 700;
+    -fx-effect: dropshadow(gaussian, rgba(229,57,53,0.2), 8, 0.3, 0, 0);
+}
+
+.gmt-form-title {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 26px;
+    -fx-font-weight: 700;
+    -fx-padding: 0 0 2 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.95), 10, 0.6, 0, 2),
+                dropshadow(gaussian, rgba(229,57,53,0.25), 8, 0.3, 0, 0);
+}
+
+.gmt-subtitle {
+    -fx-text-fill: rgba(255,255,255,0.80);
+    -fx-font-size: 13px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.80), 5, 0.4, 0, 1);
+}
+
+.gmt-strong { -fx-font-weight: 700; }
+
+.gmt-label {
+    -fx-text-fill: rgba(255,255,255,0.95);
+    -fx-font-size: 12px;
+    -fx-font-weight: 800;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.85), 6, 0.5, 0, 1);
+}
+
+.gmt-form .separator .line {
+    -fx-border-color: rgba(229,57,53,0.25);
+    -fx-border-width: 1 0 0 0;
+}
+
+.gmt-form-card {
+    -fx-background-color: linear-gradient(to bottom right,
+        rgba(14,14,14,0.97), rgba(10,10,10,0.96));
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: rgba(229,57,53,0.15) rgba(255,255,255,0.06)
+                       rgba(255,255,255,0.04) rgba(255,255,255,0.06);
+    -fx-border-width: 1.5 1 1 1;
+    -fx-effect: dropshadow(gaussian, rgba(229,57,53,0.12), 40, 0.2, 0, 8),
+                dropshadow(gaussian, rgba(0,0,0,0.75), 30, 0.3, 0, 12);
+}
+
+.gmt-field {
+    -fx-background-color: rgba(0,0,0,0.55);
+    -fx-text-fill: #ffffff;
+    -fx-prompt-text-fill: rgba(255,255,255,0.50);
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+    -fx-border-color: rgba(255,255,255,0.20);
+    -fx-border-width: 1;
+    -fx-padding: 12 14 12 14;
+    -fx-font-size: 13px;
+}
+
+.gmt-field:focused {
+    -fx-border-color: rgba(229,57,53,0.55);
+    -fx-background-color: rgba(229,57,53,0.04);
+    -fx-effect: dropshadow(gaussian, rgba(229,57,53,0.15), 12, 0.3, 0, 0);
+}
+
+.gmt-btn-primary {
+    -fx-background-color: linear-gradient(to right, #E53935, #FF5252);
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: 700;
+    -fx-font-size: 13px;
+    -fx-background-radius: 4;
+    -fx-padding: 11 18 11 18;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(229,57,53,0.35), 12, 0.3, 0, 3);
+}
+.gmt-btn-primary:hover {
+    -fx-background-color: linear-gradient(to right, #EF5350, #FF6E6E);
+    -fx-effect: dropshadow(gaussian, rgba(229,57,53,0.50), 18, 0.35, 0, 3);
+}
+.gmt-btn-primary:pressed {
+    -fx-background-color: linear-gradient(to right, #C62828, #E53935);
+    -fx-effect: dropshadow(gaussian, rgba(229,57,53,0.20), 6, 0.2, 0, 1);
+}
+.gmt-btn-lg { -fx-font-size: 14px; -fx-padding: 13 22 13 22; }
+
+.gmt-btn-link {
+    -fx-background-color: transparent;
+    -fx-text-fill: rgba(229,57,53,0.85);
+    -fx-underline: true;
+    -fx-cursor: hand;
+    -fx-font-size: 12px;
+}
+.gmt-btn-link:hover { -fx-text-fill: #FF5252; }
+
+.gmt-status {
+    -fx-padding: 8 12 8 12;
+    -fx-font-size: 12px;
+    -fx-background-color: rgba(255,255,255,0.02);
+    -fx-background-radius: 4;
+    -fx-border-color: rgba(255,255,255,0.04);
+    -fx-border-radius: 4;
+}
+.gmt-error   { -fx-text-fill: #ff6b6b; -fx-font-size: 12px; }
+.gmt-success { -fx-text-fill: #69f0ae; -fx-font-size: 12px; }
+
+.gmt-login-overlay { -fx-background-color: rgba(6,6,6,0.85); }
+
+.gmt-login-anim-card {
+    -fx-alignment: center;
+    -fx-background-color: linear-gradient(to bottom right,
+        rgba(18,18,18,0.98), rgba(10,10,10,0.97));
+    -fx-background-radius: 8;
+    -fx-border-color: rgba(229,57,53,0.35);
+    -fx-border-radius: 8;
+    -fx-border-width: 1.5;
+    -fx-effect: dropshadow(gaussian, rgba(229,57,53,0.20), 30, 0.3, 0, 0);
+}
+
+.gmt-runner      { -fx-font-size: 56px; }
+.gmt-push-target {
+    -fx-font-size: 64px;
+    -fx-text-fill: #E53935;
+    -fx-effect: dropshadow(gaussian, rgba(229,57,53,0.35), 14, 0.3, 0, 0);
+}
+
+/* Scrollbars */
+.scroll-bar { -fx-background-color: transparent; }
+.scroll-bar .thumb {
+    -fx-background-color: rgba(229,57,53,0.3);
+    -fx-background-radius: 3;
+}
+.scroll-bar .thumb:hover { -fx-background-color: rgba(229,57,53,0.5); }
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button { -fx-background-color: transparent; -fx-padding: 0; }
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow  { -fx-shape: ""; -fx-padding: 0; }
+.scroll-bar .track             { -fx-background-color: transparent; }
+
+/* Table view */
+.table-view { -fx-background-color: transparent; -fx-border-color: rgba(255,255,255,0.06); }
+.table-view .column-header-background {
+    -fx-background-color: rgba(14,14,14,0.95);
+}
+.table-view .column-header .label {
+    -fx-text-fill: rgba(255,255,255,0.40);
+    -fx-font-size: 10px;
+    -fx-font-weight: 800;
+}
+.table-row-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent rgba(255,255,255,0.04) transparent;
+    -fx-border-width: 0 0 1 0;
+}
+.table-row-cell:selected {
+    -fx-background-color: rgba(229,57,53,0.12);
+}
+.table-row-cell:hover {
+    -fx-background-color: rgba(229,57,53,0.05);
+}
+.table-cell {
+    -fx-text-fill: rgba(255,255,255,0.85);
+    -fx-font-size: 13px;
+}
+
+/* Utility */
+.gmt-tag         { -fx-text-fill: #E53935; -fx-font-size: 11px; -fx-font-weight: 700; }
+.gmt-accent-text { -fx-text-fill: #E53935; }
+.gmt-stat-value  { -fx-text-fill: #ffffff; -fx-font-size: 26px; -fx-font-weight: 700; }
+.gmt-stat-label  { -fx-text-fill: rgba(255,255,255,0.35); -fx-font-size: 10px; -fx-font-weight: 600; }
+.gmt-nav-btn     { -fx-background-color: rgba(229,57,53,0.10); -fx-border-color: rgba(229,57,53,0.28); -fx-border-radius:4; -fx-border-width:1; -fx-text-fill: rgba(255,255,255,0.85); -fx-font-weight:700; -fx-font-size:12px; -fx-padding:8 14 8 14; -fx-cursor:hand; }
+.gmt-nav-btn:hover { -fx-background-color: rgba(229,57,53,0.20); -fx-border-color:rgba(229,57,53,0.55); -fx-text-fill:#fff; }
