@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.AddRehabTrackingController"
+      styleClass="gmt-form-card, gmt-form" maxWidth="580" spacing="12" alignment="CENTER">
+    <padding><Insets top="24" right="28" bottom="24" left="28"/></padding>
+    <children>
+        <Label text="📋" style="-fx-font-size:32px;"/>
+        <Label text="LOG REHAB SESSION" styleClass="gmt-form-title"/>
+        <Label text="Track your weekly rehabilitation progress" styleClass="gmt-subtitle"/>
+        <Separator/>
+
+        <HBox spacing="12">
+            <children>
+                <VBox spacing="4" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="PLAN ID" styleClass="gmt-label"/>
+                        <TextField fx:id="tfPlanId" promptText="e.g. 1" styleClass="gmt-field"/>
+                    </children>
+                </VBox>
+                <VBox spacing="4" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="USER ID" styleClass="gmt-label"/>
+                        <TextField fx:id="tfUserId" promptText="e.g. 1" styleClass="gmt-field"/>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+
+        <HBox spacing="12">
+            <children>
+                <VBox spacing="4" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="SESSION DATE (YYYY-MM-DD)" styleClass="gmt-label"/>
+                        <TextField fx:id="tfSessionDate" promptText="e.g. 2026-05-07" styleClass="gmt-field"/>
+                    </children>
+                </VBox>
+                <VBox spacing="4" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="WEEK DAY" styleClass="gmt-label"/>
+                        <ComboBox fx:id="cbWeekDay" maxWidth="Infinity"/>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+
+        <HBox spacing="12" alignment="CENTER_LEFT">
+            <children>
+                <CheckBox fx:id="cbExerciseDone" text="Exercise Completed"/>
+            </children>
+        </HBox>
+
+        <VBox spacing="4" alignment="CENTER_LEFT">
+            <children>
+                <Label text="EXERCISE NAME (optional)" styleClass="gmt-label"/>
+                <TextField fx:id="tfExerciseName" promptText="e.g. Leg raises" styleClass="gmt-field"/>
+            </children>
+        </VBox>
+
+        <HBox spacing="12">
+            <children>
+                <VBox spacing="4" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="PAIN LEVEL (0-10)" styleClass="gmt-label"/>
+                        <TextField fx:id="tfPainLevel" promptText="e.g. 3" styleClass="gmt-field"/>
+                    </children>
+                </VBox>
+                <VBox spacing="4" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="DIFFICULTY (0-10)" styleClass="gmt-label"/>
+                        <TextField fx:id="tfDifficultyLevel" promptText="e.g. 5" styleClass="gmt-field"/>
+                    </children>
+                </VBox>
+                <VBox spacing="4" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="DURATION (min)" styleClass="gmt-label"/>
+                        <TextField fx:id="tfDurationMinutes" promptText="e.g. 30" styleClass="gmt-field"/>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+
+        <VBox spacing="4" alignment="CENTER_LEFT">
+            <children>
+                <Label text="NOTES (optional)" styleClass="gmt-label"/>
+                <TextArea fx:id="taNotes" promptText="How did the session go?" prefRowCount="3" styleClass="gmt-field"/>
+            </children>
+        </VBox>
+
+        <Button text="🔥 LOG SESSION" onAction="#onSave" maxWidth="Infinity" styleClass="gmt-btn-primary, gmt-btn-lg"/>
+        <Button text="CANCEL" onAction="#onCancel" styleClass="gmt-btn-link" maxWidth="Infinity"/>
+    </children>
+</VBox>

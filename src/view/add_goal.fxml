@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.AddGoalController"
+      styleClass="gmt-form-card, gmt-form" maxWidth="560" spacing="12" alignment="CENTER">
+    <padding><Insets top="24" right="28" bottom="24" left="28"/></padding>
+    <children>
+        <Label text="🎯" style="-fx-font-size:32px;"/>
+        <Label text="NEW GOAL" styleClass="gmt-form-title"/>
+        <Label text="Set a new target to track your progress" styleClass="gmt-subtitle"/>
+        <Separator/>
+
+        <VBox spacing="4" alignment="CENTER_LEFT">
+            <children>
+                <Label text="USER ID" styleClass="gmt-label"/>
+                <TextField fx:id="tfUserId" promptText="e.g. 1" styleClass="gmt-field"/>
+            </children>
+        </VBox>
+
+        <VBox spacing="4" alignment="CENTER_LEFT">
+            <children>
+                <Label text="GOAL TITLE" styleClass="gmt-label"/>
+                <TextField fx:id="tfTitle" promptText="e.g. Run 5km daily" styleClass="gmt-field"/>
+            </children>
+        </VBox>
+
+        <VBox spacing="4" alignment="CENTER_LEFT">
+            <children>
+                <Label text="DESCRIPTION (optional)" styleClass="gmt-label"/>
+                <TextField fx:id="tfDescription" promptText="Describe your goal" styleClass="gmt-field"/>
+            </children>
+        </VBox>
+
+        <HBox spacing="12">
+            <children>
+                <VBox spacing="4" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="CATEGORY" styleClass="gmt-label"/>
+                        <ComboBox fx:id="cbCategory" maxWidth="Infinity"/>
+                    </children>
+                </VBox>
+                <VBox spacing="4" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="PRIORITY" styleClass="gmt-label"/>
+                        <ComboBox fx:id="cbPriority" maxWidth="Infinity"/>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+
+        <HBox spacing="12">
+            <children>
+                <VBox spacing="4" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="STATUS" styleClass="gmt-label"/>
+                        <ComboBox fx:id="cbStatus" maxWidth="Infinity"/>
+                    </children>
+                </VBox>
+                <VBox spacing="4" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="PROGRESS (0-100)" styleClass="gmt-label"/>
+                        <TextField fx:id="tfProgress" promptText="0" styleClass="gmt-field"/>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+
+        <VBox spacing="4" alignment="CENTER_LEFT">
+            <children>
+                <Label text="TARGET DATE (YYYY-MM-DD, optional)" styleClass="gmt-label"/>
+                <TextField fx:id="tfTargetDate" promptText="e.g. 2026-12-31" styleClass="gmt-field"/>
+            </children>
+        </VBox>
+
+        <VBox spacing="4" alignment="CENTER_LEFT">
+            <children>
+                <Label text="NOTES (optional)" styleClass="gmt-label"/>
+                <TextField fx:id="tfNotes" promptText="Additional notes" styleClass="gmt-field"/>
+            </children>
+        </VBox>
+
+        <Button text="🔥 ADD GOAL" onAction="#onSave" maxWidth="Infinity" styleClass="gmt-btn-primary, gmt-btn-lg"/>
+        <Button text="CANCEL" onAction="#onCancel" styleClass="gmt-btn-link" maxWidth="Infinity"/>
+    </children>
+</VBox>

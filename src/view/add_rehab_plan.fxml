@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.AddRehabPlanController"
+      styleClass="gmt-form-card, gmt-form" maxWidth="580" spacing="14" alignment="CENTER">
+    <padding><Insets top="28" right="28" bottom="28" left="28"/></padding>
+    <children>
+        <Label text="🏥" style="-fx-font-size:32px;"/>
+        <Label text="NEW REHAB PLAN" styleClass="gmt-form-title"/>
+        <Label text="Create a structured rehabilitation program" styleClass="gmt-subtitle"/>
+        <Separator/>
+
+        <HBox spacing="12">
+            <children>
+                <VBox spacing="4" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="INJURY ID" styleClass="gmt-label"/>
+                        <TextField fx:id="tfInjuryId" promptText="e.g. 1" styleClass="gmt-field"/>
+                    </children>
+                </VBox>
+                <VBox spacing="4" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="DURATION (weeks)" styleClass="gmt-label"/>
+                        <TextField fx:id="tfDurationWeeks" promptText="e.g. 4" styleClass="gmt-field"/>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+
+        <VBox spacing="4" alignment="CENTER_LEFT">
+            <children>
+                <Label text="PHASE" styleClass="gmt-label"/>
+                <TextField fx:id="tfPhase" promptText="e.g. Phase 1 - Acute Recovery" styleClass="gmt-field"/>
+            </children>
+        </VBox>
+
+        <VBox spacing="4" alignment="CENTER_LEFT">
+            <children>
+                <Label text="EXERCISES (comma-separated)" styleClass="gmt-label"/>
+                <TextArea fx:id="taExercises" promptText="e.g. Leg raises, Knee flexion, Ice pack" prefRowCount="3" styleClass="gmt-field"/>
+            </children>
+        </VBox>
+
+        <VBox spacing="4" alignment="CENTER_LEFT">
+            <children>
+                <Label text="DETAILED PLAN (optional)" styleClass="gmt-label"/>
+                <TextArea fx:id="taDetailedPlan" promptText="Detailed week-by-week plan..." prefRowCount="4" styleClass="gmt-field"/>
+            </children>
+        </VBox>
+
+        <Button text="🔥 CREATE PLAN" onAction="#onSave" maxWidth="Infinity" styleClass="gmt-btn-primary, gmt-btn-lg"/>
+        <Button text="CANCEL" onAction="#onCancel" styleClass="gmt-btn-link" maxWidth="Infinity"/>
+    </children>
+</VBox>

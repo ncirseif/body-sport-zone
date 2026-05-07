@@ -1,0 +1,29 @@
+═══════════════════════════════════════════════════════
+ HOW TO RUN IN ECLIPSE
+═══════════════════════════════════════════════════════
+
+STEP 1 — Import project
+  File → Import → General → Existing Projects into Workspace
+  Browse to this folder → Finish
+
+STEP 2 — Add JARs to Build Path
+  Right-click project → Build Path → Configure Build Path
+  Libraries tab → Add JARs → select everything inside lib/
+
+STEP 3 — Add VM arguments (REQUIRED for JavaFX)
+  Right-click project → Run As → Run Configurations
+  Arguments tab → VM arguments → paste:
+
+  --module-path "lib/javafx-sdk/lib" --add-modules javafx.controls,javafx.fxml
+
+STEP 4 — Set main class
+  Main tab → Main class:
+    greenmindtechfx.AppLauncher
+
+STEP 5 — Set up database
+  Open MySQL Workbench → run database/schema.sql
+  Then edit:  src/tn/edu/esprit/tools/DataSource.java
+  Change URL / USER / PASSWORD to match your local MySQL.
+
+STEP 6 — Run!
+═══════════════════════════════════════════════════════

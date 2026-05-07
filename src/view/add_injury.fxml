@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.AddInjuryController"
+      styleClass="gmt-form-card, gmt-form" maxWidth="560" spacing="14" alignment="CENTER">
+    <padding><Insets top="28" right="28" bottom="28" left="28"/></padding>
+    <children>
+        <Label text="🩹" style="-fx-font-size:32px;"/>
+        <Label text="RECORD INJURY" styleClass="gmt-form-title"/>
+        <Label text="Log an injury for tracking and rehabilitation" styleClass="gmt-subtitle"/>
+        <Separator/>
+
+        <VBox spacing="4" alignment="CENTER_LEFT">
+            <children>
+                <Label text="USER ID" styleClass="gmt-label"/>
+                <TextField fx:id="tfUserId" promptText="e.g. 1" styleClass="gmt-field"/>
+            </children>
+        </VBox>
+
+        <VBox spacing="4" alignment="CENTER_LEFT">
+            <children>
+                <Label text="INJURY TYPE" styleClass="gmt-label"/>
+                <TextField fx:id="tfType" promptText="e.g. Muscle Strain" styleClass="gmt-field"/>
+            </children>
+        </VBox>
+
+        <VBox spacing="4" alignment="CENTER_LEFT">
+            <children>
+                <Label text="LOCATION" styleClass="gmt-label"/>
+                <TextField fx:id="tfLocation" promptText="e.g. Left Knee" styleClass="gmt-field"/>
+            </children>
+        </VBox>
+
+        <VBox spacing="4" alignment="CENTER_LEFT">
+            <children>
+                <Label text="SEVERITY" styleClass="gmt-label"/>
+                <ComboBox fx:id="cbSeverity" maxWidth="Infinity"/>
+            </children>
+        </VBox>
+
+        <VBox spacing="4" alignment="CENTER_LEFT">
+            <children>
+                <Label text="START DATE (YYYY-MM-DD)" styleClass="gmt-label"/>
+                <TextField fx:id="tfStartDate" promptText="e.g. 2026-05-01" styleClass="gmt-field"/>
+            </children>
+        </VBox>
+
+        <Button text="🔥 RECORD INJURY" onAction="#onSave" maxWidth="Infinity" styleClass="gmt-btn-primary, gmt-btn-lg"/>
+        <Button text="CANCEL" onAction="#onCancel" styleClass="gmt-btn-link" maxWidth="Infinity"/>
+    </children>
+</VBox>

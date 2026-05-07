@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.EditRehabPlanController"
+      styleClass="gmt-form-card, gmt-form" maxWidth="580" spacing="14" alignment="CENTER">
+    <padding><Insets top="28" right="28" bottom="28" left="28"/></padding>
+    <children>
+        <Label text="✏️" style="-fx-font-size:32px;"/>
+        <Label text="EDIT REHAB PLAN" styleClass="gmt-form-title"/>
+        <Separator/>
+
+        <HBox spacing="12">
+            <children>
+                <VBox spacing="4" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="ID" styleClass="gmt-label"/>
+                        <TextField fx:id="tfId" styleClass="gmt-field"/>
+                    </children>
+                </VBox>
+                <VBox spacing="4" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="INJURY ID" styleClass="gmt-label"/>
+                        <TextField fx:id="tfInjuryId" styleClass="gmt-field"/>
+                    </children>
+                </VBox>
+                <VBox spacing="4" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="DURATION (weeks)" styleClass="gmt-label"/>
+                        <TextField fx:id="tfDurationWeeks" styleClass="gmt-field"/>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+
+        <VBox spacing="4" alignment="CENTER_LEFT">
+            <children>
+                <Label text="PHASE" styleClass="gmt-label"/>
+                <TextField fx:id="tfPhase" styleClass="gmt-field"/>
+            </children>
+        </VBox>
+
+        <VBox spacing="4" alignment="CENTER_LEFT">
+            <children>
+                <Label text="EXERCISES" styleClass="gmt-label"/>
+                <TextArea fx:id="taExercises" prefRowCount="3" styleClass="gmt-field"/>
+            </children>
+        </VBox>
+
+        <VBox spacing="4" alignment="CENTER_LEFT">
+            <children>
+                <Label text="DETAILED PLAN" styleClass="gmt-label"/>
+                <TextArea fx:id="taDetailedPlan" prefRowCount="4" styleClass="gmt-field"/>
+            </children>
+        </VBox>
+
+        <Button text="💾 UPDATE PLAN" onAction="#onSave" maxWidth="Infinity" styleClass="gmt-btn-primary, gmt-btn-lg"/>
+        <Button text="CANCEL" onAction="#onCancel" styleClass="gmt-btn-link" maxWidth="Infinity"/>
+    </children>
+</VBox>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.AddExerciseController"
+      styleClass="gmt-form-card, gmt-form" maxWidth="560" spacing="14" alignment="CENTER">
+    <padding><Insets top="28" right="28" bottom="28" left="28"/></padding>
+    <children>
+        <Label text="🤸" style="-fx-font-size:32px;"/>
+        <Label text="NEW EXERCISE" styleClass="gmt-form-title"/>
+        <Label text="Define a new movement for the library" styleClass="gmt-subtitle"/>
+        <Separator/>
+        
+        <VBox spacing="4" alignment="CENTER_LEFT">
+            <children>
+                <Label text="EXERCISE NAME" styleClass="gmt-label"/>
+                <TextField fx:id="tfName" promptText="e.g. Barbell Squat" styleClass="gmt-field"/>
+            </children>
+        </VBox>
+
+        <VBox spacing="4" alignment="CENTER_LEFT">
+            <children>
+                <Label text="TARGET MUSCLE" styleClass="gmt-label"/>
+                <TextField fx:id="tfMuscle" promptText="e.g. Quadriceps" styleClass="gmt-field"/>
+            </children>
+        </VBox>
+
+        <Label fx:id="statusLabel" wrapText="true" styleClass="gmt-status" visible="false" managed="false"/>
+        
+        <Button fx:id="btnSave" text="🔥 ADD EXERCISE" onAction="#onSave" maxWidth="Infinity" styleClass="gmt-btn-primary, gmt-btn-lg"/>
+        <Button text="CANCEL" onAction="#onCancel" styleClass="gmt-btn-link" maxWidth="Infinity"/>
+    </children>
+</VBox>

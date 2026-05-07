@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.AddHealthProfileController"
+      styleClass="gmt-form-card, gmt-form" maxWidth="560" spacing="14" alignment="CENTER">
+    <padding><Insets top="28" right="28" bottom="28" left="28"/></padding>
+    <children>
+        <Label text="❤️" style="-fx-font-size:32px;"/>
+        <Label text="NEW HEALTH PROFILE" styleClass="gmt-form-title"/>
+        <Label text="Track your physical health metrics" styleClass="gmt-subtitle"/>
+        <Separator/>
+
+        <VBox spacing="4" alignment="CENTER_LEFT">
+            <children>
+                <Label text="USER ID" styleClass="gmt-label"/>
+                <TextField fx:id="tfUserId" promptText="e.g. 1" styleClass="gmt-field"/>
+            </children>
+        </VBox>
+
+        <VBox spacing="4" alignment="CENTER_LEFT">
+            <children>
+                <Label text="AGE" styleClass="gmt-label"/>
+                <TextField fx:id="tfAge" promptText="e.g. 25" styleClass="gmt-field"/>
+            </children>
+        </VBox>
+
+        <VBox spacing="4" alignment="CENTER_LEFT">
+            <children>
+                <Label text="HEIGHT (cm)" styleClass="gmt-label"/>
+                <TextField fx:id="tfHeight" promptText="e.g. 175.5" styleClass="gmt-field"/>
+            </children>
+        </VBox>
+
+        <VBox spacing="4" alignment="CENTER_LEFT">
+            <children>
+                <Label text="WEIGHT (kg)" styleClass="gmt-label"/>
+                <TextField fx:id="tfWeight" promptText="e.g. 70.0" styleClass="gmt-field"/>
+            </children>
+        </VBox>
+
+        <VBox spacing="4" alignment="CENTER_LEFT">
+            <children>
+                <Label text="BODY FAT %" styleClass="gmt-label"/>
+                <TextField fx:id="tfBodyFat" promptText="e.g. 15.0" styleClass="gmt-field"/>
+            </children>
+        </VBox>
+
+        <VBox spacing="4" alignment="CENTER_LEFT">
+            <children>
+                <Label text="MEDICAL HISTORY (optional)" styleClass="gmt-label"/>
+                <TextField fx:id="tfMedicalHistory" promptText="e.g. Asthma, Diabetes" styleClass="gmt-field"/>
+            </children>
+        </VBox>
+
+        <Button fx:id="btnSave" text="💾 SAVE PROFILE" onAction="#onSave" maxWidth="Infinity" styleClass="gmt-btn-primary, gmt-btn-lg"/>
+        <Button text="CANCEL" onAction="#onCancel" styleClass="gmt-btn-link" maxWidth="Infinity"/>
+    </children>
+</VBox>

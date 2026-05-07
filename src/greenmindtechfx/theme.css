@@ -1,0 +1,355 @@
+/* ═══════════════════════════════════════════════════════════════
+   GREEN MIND TECH — DARK FORGE THEME  v2
+   Full-page layout · Animated sport background · No sidebar
+   ═══════════════════════════════════════════════════════════════ */
+
+.root {
+    -fx-font-family: "Segoe UI";
+    -fx-base: #0a0a0a;
+    -fx-background: #0a0a0a;
+    -fx-background-color: #0a0a0a;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ANIMATED SPORT BACKGROUND
+   JavaFX CSS does not support keyframe animations directly,
+   so we layer multiple gradient + image regions and use
+   JavaFX Timeline in MainController to animate translateX/scale.
+   The CSS sets up the visual; the controller drives the motion.
+   ══════════════════════════════════════════════════════════════ */
+.gmt-bg {
+    /* Real gym / barbell athlete photo — Unsplash open license */
+    -fx-background-image: url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=85");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+}
+
+/* Dark cinematic overlay over the photo */
+.gmt-bg-overlay {
+    -fx-background-color:
+        linear-gradient(to bottom,
+            rgba(6, 6, 6, 0.72) 0%,
+            rgba(6, 6, 6, 0.55) 35%,
+            rgba(6, 6, 6, 0.65) 70%,
+            rgba(6, 6, 6, 0.85) 100%),
+        radial-gradient(center 50% 40%, radius 65%,
+            rgba(229, 57, 53, 0.06) 0%,
+            rgba(229, 57, 53, 0.0) 60%);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   BRAND HEADER (replaces the left sidebar — now on top)
+   ══════════════════════════════════════════════════════════════ */
+.gmt-brand-header {
+    -fx-background-color:
+        linear-gradient(to bottom,
+            rgba(8, 8, 8, 0.82),
+            rgba(8, 8, 8, 0.55));
+    -fx-border-color: transparent transparent rgba(229, 57, 53, 0.18) transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+/* ── PILL CARDS (horizontal, compact) ── */
+.gmt-pill-card {
+    -fx-min-width: 120.0;
+    -fx-max-width: 160.0;
+}
+
+/* ── FOOTER TAG ── */
+.gmt-footer-tag {
+    -fx-padding: 10 0 12 0;
+    -fx-alignment: center;
+}
+
+.gmt-tiny {
+    -fx-font-size: 11px;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   CARDS
+   ══════════════════════════════════════════════════════════════ */
+.gmt-card {
+    -fx-background-color: linear-gradient(to bottom right, rgba(18, 18, 18, 0.97), rgba(12, 12, 12, 0.96));
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-border-color: rgba(255, 255, 255, 0.06);
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 30, 0.25, 0, 10);
+}
+
+.gmt-soft-card {
+    -fx-background-color: linear-gradient(to right, rgba(229, 57, 53, 0.06), rgba(20, 20, 20, 0.85));
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-border-color: rgba(229, 57, 53, 0.12);
+    -fx-border-width: 1;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   CENTER HOST — transparent so bg shows through
+   ══════════════════════════════════════════════════════════════ */
+.gmt-center-host {
+    -fx-background-color: transparent;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   TYPOGRAPHY
+   ══════════════════════════════════════════════════════════════ */
+.gmt-logo {
+    -fx-text-fill: #E53935;
+    -fx-font-size: 28px;
+    -fx-font-weight: 700;
+}
+
+.gmt-title {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 30px;
+    -fx-font-weight: 700;
+    -fx-effect: dropshadow(gaussian, rgba(229, 57, 53, 0.2), 8, 0.3, 0, 0);
+}
+
+.gmt-form-title {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 26px;
+    -fx-font-weight: 700;
+    -fx-padding: 0 0 2 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.95), 10, 0.6, 0, 2),
+                dropshadow(gaussian, rgba(229, 57, 53, 0.25), 8, 0.3, 0, 0);
+}
+
+.gmt-subtitle {
+    -fx-text-fill: rgba(255, 255, 255, 0.80);
+    -fx-font-size: 13px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.80), 5, 0.4, 0, 1);
+}
+
+.gmt-strong {
+    -fx-font-weight: 700;
+}
+
+.gmt-label {
+    -fx-text-fill: rgba(255, 255, 255, 0.95);
+    -fx-font-size: 12px;
+    -fx-font-weight: 800;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.85), 6, 0.5, 0, 1);
+}
+
+/* ── SEPARATOR ── */
+.gmt-form .separator .line {
+    -fx-border-color: rgba(229, 57, 53, 0.25);
+    -fx-border-width: 1 0 0 0;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   FORM CARD (loaded into contentHost)
+   ══════════════════════════════════════════════════════════════ */
+.gmt-form-card {
+    -fx-background-color: linear-gradient(to bottom right, rgba(14, 14, 14, 0.97), rgba(10, 10, 10, 0.96));
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: rgba(229, 57, 53, 0.15) rgba(255,255,255,0.06) rgba(255,255,255,0.04) rgba(255,255,255,0.06);
+    -fx-border-width: 1.5 1 1 1;
+    -fx-effect: dropshadow(gaussian, rgba(229, 57, 53, 0.12), 40, 0.2, 0, 8),
+                dropshadow(gaussian, rgba(0,0,0,0.75), 30, 0.3, 0, 12);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   INPUT FIELDS
+   ══════════════════════════════════════════════════════════════ */
+.gmt-field {
+    -fx-background-color: rgba(0, 0, 0, 0.55);
+    -fx-text-fill: #ffffff;
+    -fx-prompt-text-fill: rgba(255, 255, 255, 0.50);
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+    -fx-border-color: rgba(255, 255, 255, 0.20);
+    -fx-border-width: 1;
+    -fx-padding: 12 14 12 14;
+    -fx-font-size: 13px;
+}
+
+.gmt-field:focused {
+    -fx-border-color: rgba(229, 57, 53, 0.55);
+    -fx-background-color: rgba(229, 57, 53, 0.04);
+    -fx-effect: dropshadow(gaussian, rgba(229, 57, 53, 0.15), 12, 0.3, 0, 0);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   BUTTONS
+   ══════════════════════════════════════════════════════════════ */
+.gmt-btn-primary {
+    -fx-background-color: linear-gradient(to right, #E53935, #FF5252);
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: 700;
+    -fx-font-size: 13px;
+    -fx-background-radius: 4;
+    -fx-padding: 11 18 11 18;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(229, 57, 53, 0.35), 12, 0.3, 0, 3);
+}
+
+.gmt-btn-primary:hover {
+    -fx-background-color: linear-gradient(to right, #EF5350, #FF6E6E);
+    -fx-effect: dropshadow(gaussian, rgba(229, 57, 53, 0.50), 18, 0.35, 0, 3);
+}
+
+.gmt-btn-primary:pressed {
+    -fx-background-color: linear-gradient(to right, #C62828, #E53935);
+    -fx-effect: dropshadow(gaussian, rgba(229, 57, 53, 0.20), 6, 0.2, 0, 1);
+}
+
+.gmt-btn-lg {
+    -fx-font-size: 14px;
+    -fx-padding: 13 18 13 18;
+}
+
+.gmt-btn-link {
+    -fx-background-color: transparent;
+    -fx-text-fill: rgba(229, 57, 53, 0.85);
+    -fx-underline: true;
+    -fx-cursor: hand;
+    -fx-font-size: 12px;
+}
+
+.gmt-btn-link:hover {
+    -fx-text-fill: #FF5252;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   STATUS MESSAGES
+   ══════════════════════════════════════════════════════════════ */
+.gmt-status {
+    -fx-padding: 8 12 8 12;
+    -fx-font-size: 12px;
+    -fx-background-color: rgba(255, 255, 255, 0.02);
+    -fx-background-radius: 4;
+    -fx-border-color: rgba(255, 255, 255, 0.04);
+    -fx-border-radius: 4;
+}
+
+.gmt-error {
+    -fx-text-fill: #ff6b6b;
+    -fx-font-size: 12px;
+}
+
+.gmt-success {
+    -fx-text-fill: #69f0ae;
+    -fx-font-size: 12px;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   LOGIN ANIMATION OVERLAY
+   ══════════════════════════════════════════════════════════════ */
+.gmt-login-overlay {
+    -fx-background-color: rgba(6, 6, 6, 0.85);
+}
+
+.gmt-login-anim-card {
+    -fx-alignment: center;
+    -fx-background-color: linear-gradient(to bottom right, rgba(18, 18, 18, 0.98), rgba(10, 10, 10, 0.97));
+    -fx-background-radius: 8;
+    -fx-border-color: rgba(229, 57, 53, 0.35);
+    -fx-border-radius: 8;
+    -fx-border-width: 1.5;
+    -fx-effect: dropshadow(gaussian, rgba(229, 57, 53, 0.20), 30, 0.3, 0, 0);
+}
+
+.gmt-runner {
+    -fx-font-size: 56px;
+}
+
+.gmt-push-target {
+    -fx-font-size: 64px;
+    -fx-text-fill: linear-gradient(to bottom, #E53935, #FF5252);
+    -fx-effect: dropshadow(gaussian, rgba(229, 57, 53, 0.35), 14, 0.3, 0, 0);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   SCROLLBAR
+   ══════════════════════════════════════════════════════════════ */
+.scroll-bar { -fx-background-color: transparent; }
+.scroll-bar .thumb { -fx-background-color: rgba(229, 57, 53, 0.3); -fx-background-radius: 3; }
+.scroll-bar .thumb:hover { -fx-background-color: rgba(229, 57, 53, 0.5); }
+.scroll-bar .increment-button, .scroll-bar .decrement-button { -fx-background-color: transparent; -fx-padding: 0; }
+.scroll-bar .increment-arrow, .scroll-bar .decrement-arrow { -fx-shape: ""; -fx-padding: 0; }
+.scroll-bar .track { -fx-background-color: transparent; }
+
+/* ══════════════════════════════════════════════════════════════
+   UTILITY CLASSES
+   ══════════════════════════════════════════════════════════════ */
+.gmt-tag {
+    -fx-text-fill: #E53935;
+    -fx-font-size: 11px;
+    -fx-font-weight: 700;
+}
+
+.gmt-brand-subtitle {
+    -fx-text-fill: rgba(255, 255, 255, 0.40);
+    -fx-font-size: 12px;
+}
+
+.gmt-stat-value {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 26px;
+    -fx-font-weight: 700;
+}
+
+.gmt-stat-label {
+    -fx-text-fill: rgba(255, 255, 255, 0.35);
+    -fx-font-size: 10px;
+    -fx-font-weight: 600;
+}
+
+.gmt-accent-text {
+    -fx-text-fill: #E53935;
+}
+
+/* ═══════════════ HOME PAGE ═══════════════ */
+.gmt-home-root   { -fx-background-color: transparent; }
+
+.gmt-home-banner {
+    -fx-background-color: linear-gradient(to bottom, rgba(8,8,8,0.75), rgba(8,8,8,0.45));
+    -fx-border-color: transparent transparent rgba(229,57,53,0.15) transparent;
+    -fx-border-width: 0 0 1 0;
+}
+.gmt-home-welcome {
+    -fx-text-fill: #ffffff; -fx-font-size: 22px; -fx-font-weight: 700;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.90), 10, 0.6, 0, 2);
+}
+.gmt-module-card {
+    -fx-background-color: linear-gradient(to bottom right, rgba(14,14,14,0.96), rgba(8,8,8,0.95));
+    -fx-background-radius: 10; -fx-border-radius: 10;
+    -fx-border-color: rgba(229,57,53,0.18) rgba(255,255,255,0.05) rgba(255,255,255,0.03) rgba(255,255,255,0.05);
+    -fx-border-width: 1.5 1 1 1; -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(229,57,53,0.10), 30, 0.2, 0, 6),
+                dropshadow(gaussian, rgba(0,0,0,0.70), 20, 0.3, 0, 8);
+    -fx-min-width: 200; -fx-max-width: 300;
+}
+.gmt-module-card:hover {
+    -fx-border-color: rgba(229,57,53,0.40) rgba(255,255,255,0.07) rgba(255,255,255,0.04) rgba(255,255,255,0.07);
+    -fx-effect: dropshadow(gaussian, rgba(229,57,53,0.28), 40, 0.3, 0, 6),
+                dropshadow(gaussian, rgba(0,0,0,0.80), 24, 0.3, 0, 10);
+}
+.gmt-module-icon  { -fx-font-size: 44px; -fx-effect: dropshadow(gaussian, rgba(229,57,53,0.35), 14, 0.4, 0, 0); }
+.gmt-module-title { -fx-text-fill: #ffffff; -fx-font-size: 15px; -fx-font-weight: 800;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.85), 6, 0.5, 0, 1); }
+.gmt-module-desc  { -fx-text-fill: rgba(255,255,255,0.58); -fx-font-size: 11px; -fx-text-alignment: center; }
+.gmt-module-features { -fx-padding: 6 0 6 0; }
+.gmt-feature-item { -fx-text-fill: rgba(255,255,255,0.75); -fx-font-size: 11px; -fx-font-weight: 600;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.70), 4, 0.4, 0, 1); }
+.gmt-module-btn {
+    -fx-background-color: linear-gradient(to right, #C62828, #E53935);
+    -fx-text-fill: #ffffff; -fx-font-weight: 700; -fx-font-size: 12px;
+    -fx-background-radius: 5; -fx-border-radius: 5; -fx-padding: 9 16 9 16; -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(229,57,53,0.30), 10, 0.3, 0, 3);
+}
+.gmt-module-btn:hover {
+    -fx-background-color: linear-gradient(to right, #E53935, #FF5252);
+    -fx-effect: dropshadow(gaussian, rgba(229,57,53,0.50), 16, 0.4, 0, 3);
+}
+.gmt-home-stats {
+    -fx-background-color: linear-gradient(to right, rgba(8,8,8,0.85), rgba(8,8,8,0.65));
+    -fx-border-color: rgba(229,57,53,0.14) transparent transparent transparent;
+    -fx-border-width: 1 0 0 0;
+}

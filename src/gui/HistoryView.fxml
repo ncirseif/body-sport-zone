@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-background: transparent;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.HistoryController">
+    <content>
+        <VBox styleClass="gmt-form-card gmt-form" spacing="14" alignment="TOP_CENTER" maxWidth="900">
+            <padding>
+                <Insets top="28" right="28" bottom="28" left="28"/>
+            </padding>
+
+            <Label text="📊" style="-fx-font-size:32px;"/>
+            <Label text="Historique des Scores" styleClass="gmt-form-title"/>
+            <Label fx:id="historyPlanLabel" text="⚠️ Sélectionnez d'abord un plan" styleClass="gmt-status"/>
+            <Separator/>
+
+            <HBox spacing="30" alignment="CENTER">
+                <VBox alignment="CENTER" spacing="5">
+                    <Label text="Score actuel" styleClass="gmt-subtitle"/>
+                    <Label fx:id="currentScoreLabel" text="0%" styleClass="gmt-stat-value" style="-fx-text-fill: #69f0ae;"/>
+                </VBox>
+                <VBox alignment="CENTER" spacing="5">
+                    <Label text="Série (streak)" styleClass="gmt-subtitle"/>
+                    <Label fx:id="currentStreakLabel" text="0 jours" styleClass="gmt-stat-value" style="-fx-text-fill: #ff6b6b;"/>
+                </VBox>
+                <VBox alignment="CENTER" spacing="5">
+                    <Label text="Niveau" styleClass="gmt-subtitle"/>
+                    <Label fx:id="currentLevelLabel" text="bronze" styleClass="gmt-stat-value" style="-fx-text-fill: #E53935;"/>
+                </VBox>
+            </HBox>
+
+            <Separator/>
+
+            <TableView fx:id="tableHistory" prefHeight="300" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colHistoryDate" prefWidth="120" text="Date"/>
+                    <TableColumn fx:id="colHistoryScore" prefWidth="100" text="Score %"/>
+                    <TableColumn fx:id="colHistoryCalories" prefWidth="120" text="Calories"/>
+                </columns>
+            </TableView>
+
+        </VBox>
+    </content>
+</ScrollPane>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-background: transparent;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.NutritionController">
+    <content>
+        <VBox alignment="TOP_CENTER" spacing="20" style="-fx-background-color: transparent;">
+            
+            <VBox styleClass="gmt-form-card gmt-form" spacing="14" alignment="TOP_CENTER" maxWidth="900">
+                <padding>
+                    <Insets top="28" right="28" bottom="28" left="28"/>
+                </padding>
+
+                <Label text="📋" style="-fx-font-size:32px;"/>
+                <Label text="Gestion des Plans" styleClass="gmt-form-title"/>
+                <Label text="Créez ou modifiez vos objectifs nutritionnels" styleClass="gmt-subtitle"/>
+                <Separator/>
+
+                <GridPane hgap="15" vgap="12" alignment="CENTER">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" prefWidth="200"/>
+                        <ColumnConstraints hgrow="SOMETIMES" prefWidth="200"/>
+                    </columnConstraints>
+
+                    <Label text="OBJECTIF" styleClass="gmt-label" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="pGoalCombo" promptText="Choisir un objectif" styleClass="gmt-field" GridPane.columnIndex="1"/>
+
+                    <Label text="CALORIES CIBLES" styleClass="gmt-label" GridPane.rowIndex="1"/>
+                    <TextField fx:id="pCal" promptText="ex: 1800" styleClass="gmt-field" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                    <Label text="PROTÉINES (g)" styleClass="gmt-label" GridPane.rowIndex="2"/>
+                    <TextField fx:id="pProt" promptText="ex: 120" styleClass="gmt-field" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                    <Label text="GLUCIDES (g)" styleClass="gmt-label" GridPane.rowIndex="3"/>
+                    <TextField fx:id="pCarb" promptText="ex: 200" styleClass="gmt-field" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                    <Label text="LIPIDES (g)" styleClass="gmt-label" GridPane.rowIndex="4"/>
+                    <TextField fx:id="pFat" promptText="ex: 50" styleClass="gmt-field" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                </GridPane>
+
+                <Label fx:id="statusLabel" styleClass="gmt-status" wrapText="true"/>
+
+                <HBox spacing="14" alignment="CENTER">
+                    <Button text="➕ AJOUTER" onAction="#handleAddPlan" styleClass="gmt-btn-primary" maxWidth="Infinity" HBox.hgrow="ALWAYS"/>
+                    <Button text="✏️ MODIFIER" onAction="#handleUpdatePlan" styleClass="gmt-btn-primary" maxWidth="Infinity" HBox.hgrow="ALWAYS"/>
+                    <Button text="🗑️ SUPPRIMER" onAction="#handleDeletePlan" styleClass="gmt-btn-primary" maxWidth="Infinity" HBox.hgrow="ALWAYS"/>
+                </HBox>
+
+                <VBox spacing="5" VBox.vgrow="ALWAYS">
+                    <Label text="📋 Liste des plans" styleClass="gmt-subtitle"/>
+                    <TableView fx:id="tablePlans" prefHeight="300" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="colId" prefWidth="50" text="ID"/>
+                            <TableColumn fx:id="colGoal" prefWidth="120" text="Objectif"/>
+                            <TableColumn fx:id="colCal" prefWidth="80" text="Cal/j"/>
+                            <TableColumn fx:id="colProt" prefWidth="80" text="Prot"/>
+                            <TableColumn fx:id="colCarb" prefWidth="80" text="Gluc"/>
+                            <TableColumn fx:id="colFat" prefWidth="80" text="Lip"/>
+                            <TableColumn fx:id="colAdherence" prefWidth="80" text="Adhérence"/>
+                            <TableColumn fx:id="colStatus" prefWidth="80" text="Statut"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+
+            </VBox>
+            
+            <Region prefHeight="20"/>
+            
+        </VBox>
+    </content>
+</ScrollPane>

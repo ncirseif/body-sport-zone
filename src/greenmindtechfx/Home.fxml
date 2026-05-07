@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="greenmindtechfx.HomeController"
+           styleClass="gmt-home-root">
+
+    <VBox alignment="TOP_CENTER" spacing="0">
+
+        <!-- WELCOME BANNER -->
+        <VBox alignment="CENTER" spacing="6" styleClass="gmt-home-banner">
+            <padding><Insets top="24" right="40" bottom="20" left="40"/></padding>
+            <Label fx:id="welcomeLabel" text="Welcome back, Warrior 👊" styleClass="gmt-home-welcome"/>
+            <Label text="Choose your module below." styleClass="gmt-subtitle"/>
+        </VBox>
+
+        <!-- 3-MODULE GRID -->
+        <HBox alignment="CENTER" spacing="24" VBox.vgrow="ALWAYS">
+            <padding><Insets top="24" right="40" bottom="24" left="40"/></padding>
+
+            <!-- MODULE 1 — AUTH (your project) -->
+            <VBox fx:id="moduleAuth" spacing="14" alignment="CENTER"
+                  styleClass="gmt-module-card" HBox.hgrow="ALWAYS">
+                <padding><Insets top="28" right="20" bottom="28" left="20"/></padding>
+                <Label text="🔥" styleClass="gmt-module-icon"/>
+                <Label text="MY ACCOUNT" styleClass="gmt-module-title"/>
+                <Region style="-fx-min-height:1;-fx-max-height:1;-fx-background-color:rgba(229,57,53,0.25);" maxWidth="100"/>
+                <Label text="Login, signup and password reset." styleClass="gmt-module-desc" wrapText="true"/>
+                <VBox spacing="4" alignment="CENTER_LEFT" styleClass="gmt-module-features">
+                    <Label text="✓  Login &amp; Sign up"          styleClass="gmt-feature-item"/>
+                    <Label text="✓  Reset password by email"      styleClass="gmt-feature-item"/>
+                    <Label text="✓  Session management"           styleClass="gmt-feature-item"/>
+                </VBox>
+                <Button text="OPEN  →" onAction="#onOpenAccount" styleClass="gmt-module-btn" maxWidth="Infinity"/>
+            </VBox>
+
+            <!-- MODULE 2 — NUTRITION (Friend 1) -->
+            <VBox fx:id="moduleNutrition" spacing="14" alignment="CENTER"
+                  styleClass="gmt-module-card" HBox.hgrow="ALWAYS">
+                <padding><Insets top="28" right="20" bottom="28" left="20"/></padding>
+                <Label text="🥗" styleClass="gmt-module-icon"/>
+                <Label text="NUTRITION" styleClass="gmt-module-title"/>
+                <Region style="-fx-min-height:1;-fx-max-height:1;-fx-background-color:rgba(229,57,53,0.25);" maxWidth="100"/>
+                <Label text="Plans, meals and adherence tracking." styleClass="gmt-module-desc" wrapText="true"/>
+                <VBox spacing="4" alignment="CENTER_LEFT" styleClass="gmt-module-features">
+                    <Label text="✓  Nutrition plans (BMR / TDEE)"     styleClass="gmt-feature-item"/>
+                    <Label text="✓  Food items &amp; meal logging"    styleClass="gmt-feature-item"/>
+                    <Label text="✓  Adherence history &amp; streaks"  styleClass="gmt-feature-item"/>
+                </VBox>
+                <Button text="OPEN  →" onAction="#onOpenNutrition" styleClass="gmt-module-btn" maxWidth="Infinity"/>
+            </VBox>
+
+            <!-- MODULE 3 — FITNESS (Friend 2) -->
+            <VBox fx:id="moduleFitness" spacing="14" alignment="CENTER"
+                  styleClass="gmt-module-card" HBox.hgrow="ALWAYS">
+                <padding><Insets top="28" right="20" bottom="28" left="20"/></padding>
+                <Label text="🏋️" styleClass="gmt-module-icon"/>
+                <Label text="FITNESS" styleClass="gmt-module-title"/>
+                <Region style="-fx-min-height:1;-fx-max-height:1;-fx-background-color:rgba(229,57,53,0.25);" maxWidth="100"/>
+                <Label text="Programs, exercises, sessions and progress." styleClass="gmt-module-desc" wrapText="true"/>
+                <VBox spacing="4" alignment="CENTER_LEFT" styleClass="gmt-module-features">
+                    <Label text="✓  Programs &amp; exercise library"  styleClass="gmt-feature-item"/>
+                    <Label text="✓  Session scheduling"               styleClass="gmt-feature-item"/>
+                    <Label text="✓  Progress &amp; performance log"   styleClass="gmt-feature-item"/>
+                </VBox>
+                <Button text="OPEN  →" onAction="#onOpenFitness" styleClass="gmt-module-btn" maxWidth="Infinity"/>
+            </VBox>
+
+        </HBox>
+
+        <!-- STATS STRIP -->
+        <HBox alignment="CENTER" spacing="40" styleClass="gmt-home-stats">
+            <padding><Insets top="14" right="40" bottom="16" left="40"/></padding>
+            <VBox alignment="CENTER" spacing="2">
+                <Label text="3" styleClass="gmt-stat-value"/>
+                <Label text="MODULES" styleClass="gmt-stat-label"/>
+            </VBox>
+            <Region style="-fx-min-width:1;-fx-max-width:1;-fx-min-height:30;-fx-background-color:rgba(229,57,53,0.20);"/>
+            <VBox alignment="CENTER" spacing="2">
+                <Label fx:id="statPlans" text="—" styleClass="gmt-stat-value"/>
+                <Label text="NUTRITION PLANS" styleClass="gmt-stat-label"/>
+            </VBox>
+            <Region style="-fx-min-width:1;-fx-max-width:1;-fx-min-height:30;-fx-background-color:rgba(229,57,53,0.20);"/>
+            <VBox alignment="CENTER" spacing="2">
+                <Label fx:id="statPrograms" text="—" styleClass="gmt-stat-value"/>
+                <Label text="PROGRAMS" styleClass="gmt-stat-label"/>
+            </VBox>
+            <Region style="-fx-min-width:1;-fx-max-width:1;-fx-min-height:30;-fx-background-color:rgba(229,57,53,0.20);"/>
+            <VBox alignment="CENTER" spacing="2">
+                <Label fx:id="statExercises" text="—" styleClass="gmt-stat-value"/>
+                <Label text="EXERCISES" styleClass="gmt-stat-label"/>
+            </VBox>
+        </HBox>
+
+    </VBox>
+</StackPane>

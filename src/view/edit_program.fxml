@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.EditProgramController"
+      styleClass="gmt-form-card, gmt-form" maxWidth="560" spacing="14" alignment="CENTER">
+    <padding><Insets top="28" right="28" bottom="28" left="28"/></padding>
+    <children>
+        <Label text="✏️" style="-fx-font-size:32px;"/>
+        <Label text="EDIT PROGRAM" styleClass="gmt-form-title"/>
+        <Label text="Modify existing training regimen" styleClass="gmt-subtitle"/>
+        <Separator/>
+        
+        <VBox spacing="4" alignment="CENTER_LEFT">
+            <children>
+                <Label text="PROGRAM NAME" styleClass="gmt-label"/>
+                <TextField fx:id="tfName" promptText="e.g. Full Body Strength" styleClass="gmt-field"/>
+            </children>
+        </VBox>
+
+        <VBox spacing="4" alignment="CENTER_LEFT">
+            <children>
+                <Label text="DIFFICULTY LEVEL" styleClass="gmt-label"/>
+                <TextField fx:id="tfLevel" promptText="e.g. Intermediate" styleClass="gmt-field"/>
+            </children>
+        </VBox>
+
+        <Label fx:id="statusLabel" wrapText="true" styleClass="gmt-status" visible="false" managed="false"/>
+        
+        <Button fx:id="btnSave" text="🔥 UPDATE PROGRAM" onAction="#onSave" maxWidth="Infinity" styleClass="gmt-btn-primary, gmt-btn-lg"/>
+        <Button text="CANCEL" onAction="#onCancel" styleClass="gmt-btn-link" maxWidth="Infinity"/>
+    </children>
+</VBox>
